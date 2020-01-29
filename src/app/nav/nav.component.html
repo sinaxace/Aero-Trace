@@ -1,7 +1,15 @@
 <!-- TODO: Customize component styles through the guide below.
     https://material.angular.io/guide/customizing-component-styles
 -->
-
-<mat-toolbar color="primary">
-    <img src="../../assets/images/airplane_canada.svg" alt="Canadian-Themed Airplane">
+<mat-toolbar class="menu" color="primary">
+    <mat-toolbar-row>
+        <button color="accent" mat-button [matMenuTriggerFor]="menu">
+            <mat-icon class="hamburger">view_headline</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+                Maps
+            </button>
+        </mat-menu>
+    </mat-toolbar-row>
 </mat-toolbar>
