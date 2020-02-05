@@ -1,14 +1,33 @@
-<!-- TODO: Customize component styles through the guide below.
-    https://material.angular.io/guide/customizing-component-styles
+<!-- 
+    The entire hamburger (or sandwich?) navigation content is within the nav component.
 -->
-<mat-toolbar class="menu" color="primary">
+<mat-toolbar class="head">
     <mat-toolbar-row>
-        <button color="accent" mat-button [matMenuTriggerFor]="menu">
+        <button color="primary" mat-button [matMenuTriggerFor]="menu">
             <mat-icon class="hamburger">view_headline</mat-icon>
         </button>
-        <mat-menu #menu="matMenu">
-            <button mat-menu-item>
-                Maps
+        <button routerLink="/" mat-flat-button>
+            <img src="../../assets/images/airplane_canada.svg" alt="Canadian Aeroplane">
+        </button>
+        <mat-menu #menu="matMenu" [overlapTrigger]="false" class="sidenav">
+            <button routerLink="/schedules" mat-menu-item>
+                <!-- overlapTrigger material attr determines whether default style overrides custom styles-->
+                Schedules
+            </button>
+            <button routerLink="/terminals" mat-menu-item>
+                Terminals
+            </button>
+            <button routerLink="/restaurants" mat-menu-item>
+                Restaurants
+            </button>
+            <button routerLink="/estimators" mat-menu-item>
+                Estimators
+            </button>
+            <button class="settings" mat-icon-button>
+                <mat-icon id=settingIcon>settings</mat-icon>
+            </button>
+            <button class="help" mat-icon-button>
+                <mat-icon id="helpIcon">help</mat-icon>
             </button>
         </mat-menu>
     </mat-toolbar-row>
