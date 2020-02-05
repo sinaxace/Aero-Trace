@@ -8,11 +8,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SchedulesComponent } from './schedules/schedules.component';
+import { RestaurantsComponent } from './restaurants/restaurants.component';
+import { EstimatorsComponent } from './estimators/estimators.component';
+import { TerminalsComponent } from './terminals/terminals.component';
+import { HomeComponent } from './home/home.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavComponent
+    NavComponent,
+    SchedulesComponent,
+    RestaurantsComponent,
+    EstimatorsComponent,
+    TerminalsComponent,
+    HomeComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

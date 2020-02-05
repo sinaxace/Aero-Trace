@@ -1,4 +1,5 @@
 # AeroTrace
+Note: Be sure to add the node_modules folder using the npm command. Alternatively, you can just replace the src folder with the current one after running ng new command.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
 
