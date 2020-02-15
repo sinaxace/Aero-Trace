@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from './material-ui/material-ui.module';
-
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -14,7 +14,8 @@ import { EstimatorsComponent } from './estimators/estimators.component';
 import { TerminalsComponent } from './terminals/terminals.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-
+import { DepartComponent } from './schedules/depart/depart.component';
+import { ArriveComponent } from './schedules/arrive/arrive.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     EstimatorsComponent,
     TerminalsComponent,
     HomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    DepartComponent,
+    ArriveComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    OwlDateTimeModule,
+    OwlNativeDateTimeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

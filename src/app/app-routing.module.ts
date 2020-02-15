@@ -1,5 +1,7 @@
 /* Angular Routing Reference: https://angular.io/guide/router 
-  TODO: add the router outlet tag into the root || nav component.html
+  This is the first level of routing in the application. 
+  Nested routes are within their component's routing module.
+  Note: Use 'ng g m <component-name> --routing' in Angular CLI to generate module files.
 */
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -9,10 +11,24 @@ import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { EstimatorsComponent } from './estimators/estimators.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { DepartComponent } from './schedules/depart/depart.component';
+import { ArriveComponent } from './schedules/arrive/arrive.component';
 
 // routes is a Singleton array that contains metadata for component navigation
 const routes: Routes = [
-  { path: 'schedules', component: SchedulesComponent },
+  {
+    path: 'schedules', component: SchedulesComponent, children: [
+      {
+        path: 'depart', component: DepartComponent
+      },
+      {
+        path: 'arrive', component: ArriveComponent
+      },
+      {
+        path: '', redirectTo: 'depart', pathMatch: 'full' // First loads to depart component
+      }
+    ]
+  },
   { path: 'terminals', component: TerminalsComponent },
   { path: 'restaurants', component: RestaurantsComponent },
   { path: 'estimators', component: EstimatorsComponent },

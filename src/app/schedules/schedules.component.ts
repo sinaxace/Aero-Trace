@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-schedules',
   templateUrl: './schedules.component.html',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SchedulesComponent implements OnInit {
 
+  buttonClicked : boolean;
+
   constructor() { }
 
   ngOnInit() {
+  
   }
+
+  
 
 }
