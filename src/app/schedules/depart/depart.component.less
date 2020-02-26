@@ -1,7 +1,7 @@
 @import "~ng-pick-datetime/assets/style/picker.min.css";
 
 
-#formbox {
+.general {
     background: white;
     margin: 15px 35px;
     height: 450px;
@@ -87,4 +87,103 @@
         padding: 10px;
     }
 
+    /*No display for specific form fields */
+    .terminals,
+    .gates,
+    .flightNum,
+    .airline,
+    #general {
+        display: none;
+    }
+
+}
+
+.specific {
+    background: white;
+    margin: 15px 35px;
+    height: 450px;
+    border-radius: 15px;
+    text-align: center;
+    color: gray;
+    padding: 5px 0px 0px 0px;
+
+    #specific,
+    .country,
+    .region,
+    input[type=date],
+    .from,
+    .to {
+        display: none;
+    }
+
+    #general {
+        font-size: 25px;
+
+        #leftArrow {
+            width: 50px;
+        }
+    }
+
+    .terminals {
+        float: left;
+        margin-left: 15px;
+
+        label[for="terminals"] {
+            font-size: 25px;
+            color: #BF0000;
+        }
+
+        select[name="terminals"] {
+            font-size: 25px;
+            width: 120px;
+            text-align: center;
+            color: #BF0000;
+            border: 4px #BF0000 solid;
+            border-radius: 10px;
+            padding: 5px;
+            background-color: transparent;
+        }
+    }
+
+    .gates {
+        float: left;
+        margin: 0px 0px 0px 15px;
+
+        label[for="gates"] {
+            font-size: 25px;
+            color: #BF0000;
+        }
+
+        select[name="gates"] {
+            font-size: 25px;
+            width: 120px;
+            text-align: center;
+            color: #BF0000;
+            border: 4px #BF0000 solid;
+            border-radius: 10px;
+            padding: 5px;
+            background-color: transparent;
+        }
+    }
+
+    .flightNum,
+    .airline {
+        font-size: 30px;
+        color: #BF0000;
+        border: 4px #BF0000 solid;
+        border-radius: 10px;
+        padding: 10px;
+        background-color: transparent;
+        margin: 25px 0px 0px 0px;
+        width: 260px;
+    }
+
+    input[type=submit] {
+        font-size: 40px;
+        background-color: #BF0000;
+        color: white;
+        border-radius: 15px;
+        padding: 20px;
+        margin-top: 30px;
+    }
 }

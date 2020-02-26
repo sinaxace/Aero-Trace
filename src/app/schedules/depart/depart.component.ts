@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DepartComponent implements OnInit {
 
+  isSpecific: boolean;
+  
+
   constructor() { }
 
   ngOnInit() {
+    this.isSpecific = false;
   }
 
 }

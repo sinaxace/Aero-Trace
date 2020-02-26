@@ -3,10 +3,12 @@
     https://material-ui-pickers.dev/getting-started/installation 
 -->
 
-<form id=formbox>
+<form [ngClass]="isSpecific ? 'specific' : 'general'">
+
+    <!-- Below is the elements for general input fields-->
 
     <!-- For going to specific filter form options-->
-    <button color="primary" id=specific mat-button>Specific Filter
+    <button (click)="isSpecific = true;" color="primary" id=specific mat-button>Specific Filter
         <img src="../../../assets/images/arrow.png" alt="Right Arrow" id=rightArrow>
     </button>
 
@@ -42,6 +44,50 @@
     <!-- Select Departure Date -->
     <input type=date>
 
+    <!-- The remaining elements are for specific for fields -->
+
+    <!-- For going to specific filter form options-->
+    <button (click)="isSpecific = false;" color="primary" id=general mat-button>
+        <img src="../../../assets/images/arrowLeft.png" alt="Right Arrow" id=leftArrow>
+        General Filter
+    </button>
+
+    <!-- Terminal Selection
+        TODO: Implement mat-select and mat-options for terminals & gates
+    -->
+    <div class=terminals>
+        <label for=terminals>Terminal</label> <br>
+        <select name="terminals">
+            <option>T1</option>
+            <option>T2</option>
+            <option>T3</option>
+        </select>
+    </div>
+
+    <div class=gates>
+        <label for=gates>Gate</label> <br>
+        <select name="gates">
+            <option>A5</option>
+            <option>B2</option>
+            <option>C7</option>
+        </select>
+    </div>
+
+    <select class="flightNum">
+        <option>Flight #</option>
+        <option>15H53C</option>
+        <option>BB95QO</option>
+        <option>QCB991</option>
+    </select>
+
+    <select class="airline">
+        <option>Airline</option>
+        <option>Air Canada</option>
+        <option>Air France</option>
+        <option>Turkish Airlines</option>
+    </select>
+
     <!-- Submit button for searching-->
-    <input type=submit value=Search>
+    <input routerLink="/result" routerLinkActive="active" type=submit value=Search>
+
 </form>

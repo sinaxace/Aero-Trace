@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { DepartComponent } from './schedules/depart/depart.component';
 import { ArriveComponent } from './schedules/arrive/arrive.component';
+import { ResultComponent } from './schedules/result/result.component';
 
 // routes is a Singleton array that contains metadata for component navigation
 const routes: Routes = [
@@ -29,6 +30,7 @@ const routes: Routes = [
       }
     ]
   },
+  { path: 'result', component: ResultComponent },
   { path: 'terminals', component: TerminalsComponent },
   { path: 'restaurants', component: RestaurantsComponent },
   { path: 'estimators', component: EstimatorsComponent },
