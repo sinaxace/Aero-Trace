@@ -1,1 +1,23 @@
-<p>restaurants works!</p>
+<section id="restaurant-swipe">
+    <img [ngClass]="'swipe-arrow'" src="../../assets/images/arrowTipLeft.png" alt="Swipe Left">
+    <img [ngClass]="'dining-image'" src="../../assets/images/mcdonalds.jpg" alt="McDonalds inside airport">
+    <img [ngClass]="'swipe-arrow'" src="../../assets/images/arrowTipRight.png" alt="Swipe Right">
+</section>
+<section>
+    <div id="overall-rating">
+        <!-- Only full stars show based on review in component's TS file-->
+        <span *ngFor="let star of rating">
+            <img *ngIf="star; else empty" src="../../assets/images/star_full.png" alt="Full Star">
+            <ng-template #empty><img src="../../assets/images/star.png" alt="Empty Star"></ng-template>
+        </span>
+    </div>
+    <div id="restaurant-info">
+        <img src="../../assets/images/reviews.png" alt="Review Image">
+        <span id="details">
+            <strong id=name>McDonalds</strong>
+            <p>Terminal <span id=location>1</span></p>
+            <p><span id="review-count">44</span> Reviews</p>
+        </span>
+        <img src="../../assets/images/Asset 1.png" alt="GPS Icon">
+    </div>
+</section>
