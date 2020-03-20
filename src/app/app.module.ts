@@ -17,6 +17,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { DepartComponent } from './schedules/depart/depart.component';
 import { ArriveComponent } from './schedules/arrive/arrive.component';
 import { ResultComponent } from './schedules/result/result.component';
+import { ReviewsComponent } from './reviews/reviews.component';
+import { WrittenreviewComponent } from './writtenreview/writtenreview.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +31,9 @@ import { ResultComponent } from './schedules/result/result.component';
     PageNotFoundComponent,
     DepartComponent,
     ArriveComponent,
-    ResultComponent
+    ResultComponent,
+    ReviewsComponent,
+    WrittenreviewComponent
   ],
   imports: [
     BrowserModule,
