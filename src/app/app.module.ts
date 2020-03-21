@@ -19,6 +19,7 @@ import { ArriveComponent } from './schedules/arrive/arrive.component';
 import { ResultComponent } from './schedules/result/result.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { WrittenreviewComponent } from './writtenreview/writtenreview.component';
+import { EstimatedComponent } from './estimated/estimated.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,8 @@ import { WrittenreviewComponent } from './writtenreview/writtenreview.component'
     ArriveComponent,
     ResultComponent,
     ReviewsComponent,
-    WrittenreviewComponent
+    WrittenreviewComponent,
+    EstimatedComponent
   ],
   imports: [
     BrowserModule,
