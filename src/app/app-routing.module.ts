@@ -14,6 +14,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { DepartComponent } from './schedules/depart/depart.component';
 import { ArriveComponent } from './schedules/arrive/arrive.component';
 import { ResultComponent } from './schedules/result/result.component';
+import { ReviewsComponent } from './reviews/reviews.component';
+import { WrittenreviewComponent } from './writtenreview/writtenreview.component';
+import { EstimatedComponent } from './estimated/estimated.component';
 
 // routes is a Singleton array that contains metadata for component navigation
 const routes: Routes = [
@@ -33,7 +36,10 @@ const routes: Routes = [
   { path: 'result', component: ResultComponent },
   { path: 'terminals', component: TerminalsComponent },
   { path: 'restaurants', component: RestaurantsComponent },
+  { path: 'reviews', component: ReviewsComponent },
+  { path: 'writtenreview', component: WrittenreviewComponent },
   { path: 'estimators', component: EstimatorsComponent },
+  { path: 'estimated', component: EstimatedComponent },
   { path: '', component: HomeComponent, pathMatch: 'full' }, // The empty default route is home page
   { path: '**', component: PageNotFoundComponent } // if cannot find page for some reason
 ];

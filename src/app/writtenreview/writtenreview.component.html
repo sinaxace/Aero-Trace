@@ -1,0 +1,22 @@
+<h1>Write Your Thoughts <br>Below!</h1>
+<form>
+    <textarea id="review" maxlength="50">Write a short review up to 50 characters.</textarea>
+    <div class="editing">
+        <button mat-button>Undo</button>
+        <button mat-button>Redo</button>
+    </div>
+    <button mat-button id="cancel" routerLink="/reviews" routerLinkActive="active">Cancel</button>
+    <div id="post-options">
+        <button id="save">
+            <span>Save</span>
+            <img src="../../assets/images/arrowDown.png" alt="Down Arrow">
+            <img src="../../assets/images/draft_icon.png" alt="Click to Save">
+        </button>
+        <button id=post>Post</button>
+        <button id="share">
+            <span>Share</span>
+            <img src="../../assets/images/arrowDown.png" alt="Down Arrow">
+            <img src="../../assets/images/share-flat.png" alt="Click to Share">
+        </button>
+    </div>
+</form>
