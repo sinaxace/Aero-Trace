@@ -17,6 +17,12 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { DepartComponent } from './schedules/depart/depart.component';
 import { ArriveComponent } from './schedules/arrive/arrive.component';
 import { ResultComponent } from './schedules/result/result.component';
+<<<<<<< HEAD
+=======
+import { ReviewsComponent } from './reviews/reviews.component';
+import { WrittenreviewComponent } from './writtenreview/writtenreview.component';
+import { EstimatedComponent } from './estimated/estimated.component';
+>>>>>>> fe442b0f686bdc841b080e438f821a1f30c59595
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +35,14 @@ import { ResultComponent } from './schedules/result/result.component';
     PageNotFoundComponent,
     DepartComponent,
     ArriveComponent,
+<<<<<<< HEAD
     ResultComponent
+=======
+    ResultComponent,
+    ReviewsComponent,
+    WrittenreviewComponent,
+    EstimatedComponent
+>>>>>>> fe442b0f686bdc841b080e438f821a1f30c59595
   ],
   imports: [
     BrowserModule,
