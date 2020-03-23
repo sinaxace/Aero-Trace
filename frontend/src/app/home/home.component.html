@@ -1,0 +1,29 @@
+<main id=homebox>
+    <h1><span class=airport>Current Airport</span> <br>
+        Toronto Pearson
+    </h1>
+    <p class=wrong>Wrong Airport? <br>Click Below!</p>
+    <button mat-button>
+        <img src="../../assets/images/Asset 1 (copy).png">
+    </button>
+</main>
+
+
+
+
+
+
+
+
+
+<p>home works!</p>
+<h2> List Of Cities</h2>
+<ul>
+    <li *ngFor="let c of Cities">
+        <h2 (click)="movieClicked(movie)">{{Cities.city}}</h2>
+    </li>
+</ul>
+<hr>
+Title <input type="text" [(ngModel)]="title" /><br>
+Desc <input type="text" [(ngModel)]="desc" /><br>
+Year <input type="text" [(ngModel)]="year" /><br>
