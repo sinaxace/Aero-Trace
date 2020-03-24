@@ -1,5 +1,6 @@
 from django.db import models
 
+<<<<<<< HEAD
 # # Create your models here.
 # class Movie(models.Model):
 #     title = models.CharField(max_length=32)
@@ -29,6 +30,14 @@ from django.db import models
 # Feel free to rename the models, but don't rename db_table values or field names.
 
 
+=======
+#Create your models here.
+class Movie(models.Model):
+    title = models.CharField(max_length=32)
+    desc = models.CharField(max_length=250)
+    year = models.IntegerField()
+    
+>>>>>>> fe442b0f686bdc841b080e438f821a1f30c59595
 class Airline(models.Model):
     airline_id = models.CharField(primary_key=True, max_length=3)
     airline_name = models.CharField(max_length=30, blank=True, null=True)
@@ -39,6 +48,7 @@ class Airline(models.Model):
         managed = False
         db_table = 'airline'
 
+<<<<<<< HEAD
 
 class AirlineInfo(models.Model):
     airline_info_id = models.CharField(primary_key=True, max_length=3)
@@ -183,12 +193,17 @@ class City(models.Model):
 
 class Country(models.Model):
     country_id = models.CharField(primary_key=True, max_length=3)
+=======
+class Country(models.Model):
+    country_id = models.CharField(primary_key=True,max_length=3)
+>>>>>>> fe442b0f686bdc841b080e438f821a1f30c59595
     country_name = models.CharField(max_length=30, blank=True, null=True)
 
     class Meta:
         managed = False
         db_table = 'country'
 
+<<<<<<< HEAD
 
 class CrusinType(models.Model):
     crusintype_id = models.CharField(primary_key=True, max_length=5)
@@ -449,3 +464,15 @@ class Terminal(models.Model):
     class Meta:
         managed = False
         db_table = 'terminal'
+=======
+class City(models.Model):
+    city_id=models.CharField(primary_key=True,max_length=3)
+    city_name=models.CharField(max_length=30, blank=True, null=True)
+    country = models.ForeignKey(Country, on_delete=models.CASCADE)
+
+    class Meta:
+        managed = False
+        db_table = 'city'
+
+    
+>>>>>>> fe442b0f686bdc841b080e438f821a1f30c59595

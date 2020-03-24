@@ -1,0 +1,24 @@
+<h1>Plan Getaway!</h1>
+<form id="estimator">
+
+    <h2>How Many...</h2>
+    <div id=quantity>
+        <div class=people>
+            <label for=people>People</label> <br>
+            <input name="people" type=number min="0" max="20" maxlength="2">
+        </div>
+
+        <div class=luggages>
+            <label for=luggages>Luggages</label> <br>
+            <input name="luggages" type=number min="0" max="20" maxlength="2">
+        </div>
+    </div>
+    <button mat-button id="schedules" routerLink="/result" routerLinkActive="active">
+        <img src="../../assets/images/whiteArrowLeft.png" alt="left-arrow">
+        Schedules
+    </button>
+    <select name="flight">
+        <option>Choose Flight</option>
+    </select>
+    <input routerLink="/estimated" routerLinkActive="active" value="Calculate" type=submit>
+</form>

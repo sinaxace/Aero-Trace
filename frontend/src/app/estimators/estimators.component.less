@@ -1,0 +1,71 @@
+h1 {
+    text-align: center;
+    color: white;
+    margin: 20px 10px 10px 10px;
+}
+
+#estimator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+
+    h2 {
+        margin: 5px;
+    }
+
+    #quantity {
+        display: flex;
+        flex-direction: row;
+
+        .people,
+        .luggages {
+            font-size: 25px;
+            text-align: center;
+            color: white;
+            margin: 15px;
+
+            input[name="people"],
+            input[name="luggages"] {
+                margin-top: 15px;
+                background: white;
+                border: white 3px solid;
+                color: #BF0000;
+                font-size: 30px;
+                width: 120px;
+                border-radius: 20px;
+                text-align: center;
+            }
+        }
+    }
+
+    #schedules {
+        color: white;
+        font-size: 35px;
+        margin: 15px;
+
+        img[alt="left-arrow"] {
+            width: 50px;
+        }
+    }
+
+    select[name="flight"] {
+        font-size: 35px;
+        margin: 20px;
+        color: #BF0000;
+        padding: 10px;
+        border-radius: 20px;
+        background: white
+    }
+
+    input[type=submit] {
+        font-size: 40px;
+        padding: 25px;
+        border-radius: 20px;
+        color: #BF0000;
+        background-color: white;
+        border: white solid 2px;
+        margin: 20px;
+    }
+}

@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import ApiMovie,AirlineInfo
+from .models import Movie, Airline,Country,City
 # Register your models here.
-admin.site.register(ApiMovie)
-admin.site.register(AirlineInfo)
+admin.site.register(Airline)
+admin.site.register(Country)
+admin.site.register(City)

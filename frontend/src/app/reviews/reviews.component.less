@@ -1,0 +1,103 @@
+#reviews-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .mat-button {
+        margin: 2px 5px 0px 3px;
+
+        span {
+            color: white;
+            font-size: 20px;
+            margin: 0px 10px;
+        }
+
+        img[alt="Go Back"] {
+            width: 60px;
+        }
+
+        img[alt="Add Review"] {
+            width: 50px;
+        }
+    }
+}
+
+#review-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    table {
+        border: white solid 2px;
+        width: 100vw; // vw is for viewport percentage
+        margin: 5px 0px;
+
+        td {
+            border-top: solid white 2px;
+            height: 65px;
+            display: flex;
+            flex-direction: row;
+
+            .rating {
+                text-align: center;
+                width: 80px;
+                margin-top: 5px;
+
+                .rate-num {
+                    color: white;
+                    font-size: 23px;
+                    margin-right: 12px;
+                }
+
+                img[alt="Star"] {
+                    width: 25px;
+                }
+
+                .name {
+                    color: white;
+                    font-size: 20px;
+                }
+            }
+
+            .thoughts {
+                width: 80vw;
+                margin: 3px;
+                font-size: 21px;
+                color: white;
+            }
+        }
+
+        tr:first-child {
+            td {
+                border: none;
+            }
+        }
+    }
+}
+
+.listing {
+    margin: 5px 5px 0px 5px;
+    text-align: center;
+
+    .page {
+        border: white solid 2px;
+        background: none;
+        padding: 5px 12px;
+        font-size: 20px;
+        margin: 0px 5px;
+        width: fit-content;
+        color: white;
+    }
+
+    #previous {
+        img[alt="Previous"] {
+            width: 40px;
+        }
+    }
+
+    #next {
+        img[alt="Next"] {
+            width: 40px;
+        }
+    }
+}
