@@ -1,51 +1,24 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
 <<<<<<< HEAD
+<<<<<<< HEAD
 from .models import ApiMovie, City, AirlineInfo
 =======
 
+=======
+from rest_framework import status
+>>>>>>> origin/merge
 from .models import Movie,Airline,Country,City
 >>>>>>> fe442b0f686bdc841b080e438f821a1f30c59595
+
+from . import Task
+
 
 
 class MovieSerializer(serializers.ModelSerializer):
     class Meta:
-<<<<<<< HEAD
-        model = ApiMovie
-=======
         model = Movie
->>>>>>> fe442b0f686bdc841b080e438f821a1f30c59595
         fields = ['id', 'title', 'desc', 'year']
-
-class MovieMiniSerializer(serializers.ModelSerializer):
-    class Meta:
-<<<<<<< HEAD
-        model = ApiMovie
-        fields = ['id', 'title']
-
-class citySerializer(serializers.ModelSerializer):
-    class Meta:
-        model = City
-        fields = ['id', 'city_id', 'city_name']
-        
-class cityMiniSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = City
-        fields = ['id', 'city_id']
-
-class airline_infoSerializer(serializers.ModelSerializer):
-    class Meta:
-            model = AirlineInfo
-            fields = ['airline_info_id', 'airline_id', 'terminal_id','counter_loaction_id','route_id','contact_no','website']
-
-class airline_infoMiniSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = AirlineInfo
-        fields = ['airline_info_id', 'airline_id']
-
-=======
-        model = Movie
-        fields = ['id', 'title']
 
 
 class BaseAirlineSerializer(serializers.ModelSerializer):
@@ -61,5 +34,26 @@ class BaseCountrySerializer(serializers.ModelSerializer):
 class BaseCitySerializer(serializers.ModelSerializer):
     class Meta:
         model = City
-        fields = ['city_id','city_name','country_id']
->>>>>>> fe442b0f686bdc841b080e438f821a1f30c59595
+        fields = ['city_id', 'city_name', 'country_id']
+
+STATUSES = (
+    'New',
+    'Ongoing',
+    'Done',
+)
+
+
+class TaskSerializer(serializers.Serializer):
+    id = serializers.IntegerField(read_only=True)
+    name = serializers.CharField(max_length=256)
+    owner = serializers.CharField(max_length=256)
+    status = serializers.ChoiceField(choices=STATUSES, default='New')
+
+    def create(self, validated_data):
+        return Task(id=None, **validated_data)
+
+    def update(self, instance, validated_data):
+        for field, value in validated_data.items():
+            setattr(instance, field, value)
+        return instance
+
