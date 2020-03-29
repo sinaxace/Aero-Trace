@@ -1,24 +1,18 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
-<<<<<<< HEAD
-<<<<<<< HEAD
-from .models import ApiMovie, City, AirlineInfo
-=======
 
-=======
-from rest_framework import status
->>>>>>> origin/merge
 from .models import Movie,Airline,Country,City
->>>>>>> fe442b0f686bdc841b080e438f821a1f30c59595
-
-from . import Task
-
 
 
 class MovieSerializer(serializers.ModelSerializer):
     class Meta:
         model = Movie
         fields = ['id', 'title', 'desc', 'year']
+
+class MovieMiniSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Movie
+        fields = ['id', 'title']
 
 
 class BaseAirlineSerializer(serializers.ModelSerializer):
@@ -35,13 +29,12 @@ class BaseCitySerializer(serializers.ModelSerializer):
     class Meta:
         model = City
         fields = ['city_id', 'city_name', 'country_id']
-
+        
 STATUSES = (
     'New',
     'Ongoing',
     'Done',
 )
-
 
 class TaskSerializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
@@ -56,4 +49,3 @@ class TaskSerializer(serializers.Serializer):
         for field, value in validated_data.items():
             setattr(instance, field, value)
         return instance
-
