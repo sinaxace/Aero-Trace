@@ -18,9 +18,5 @@ export class ApiService {
       return this.http.get(this.baseurl + '/movies/' + id + '/',
         { headers: this.httpHeaders });
     }
-    //Getting All Flights
-    getCity(): Observable <any> {
-      return this.http.get(this.baseurl+'/City/');
-    }
   }
 

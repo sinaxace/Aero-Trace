@@ -17,14 +17,17 @@ from django.contrib import admin
 from django.urls import include, path
 from rest_framework import routers
 from djangocrud.api import views
-from djangocrud.api.models import Airline,Movie,Country, City
+
+from djangocrud.api.models import Airline, Movie, Country, City
+from djangocrud.api.views import TaskViewSet
+
 
 router = routers.DefaultRouter()
 router.register(r'Airline', views.BaseAirlineViewSet)
 router.register(r'Movie', views.MovieViewSet)
 router.register(r'Country', views.BaseCountryViewSet)
 router.register(r'City', views.BaseCityViewSet)
-
+router.register(r'tasks', TaskViewSet, basename='tasks')
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
