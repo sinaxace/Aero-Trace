@@ -84,10 +84,6 @@ WSGI_APPLICATION = 'djangocrud.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-<<<<<<< HEAD
-=======
-
->>>>>>> fe442b0f686bdc841b080e438f821a1f30c59595
         'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'airport',
@@ -95,13 +91,6 @@ DATABASES = {
         'PASSWORD': 'root',
         'HOST': '34.66.165.158',
     }
-<<<<<<< HEAD
-    # 'default': { 
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    # }
-=======
->>>>>>> fe442b0f686bdc841b080e438f821a1f30c59595
 }
 
 
