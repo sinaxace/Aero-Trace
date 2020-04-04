@@ -17,16 +17,18 @@ print(fileDir)
 
 parsed = json.loads(todayArr.text)
 schedule = parsed['list']
+
 #Get flight id
 id_list = []
 for id_ in schedule:
-    name = id_['id2']
-    id_list.append(name)
-print(id_list)    
+    id_list.extend((id_["al"],id_['id2'], id_["schTime"][:10], id_["gate"],id_["term"], id_["routes"]."name"))
+    
+print(id_list)
+
 text = json.dumps(schedule, sort_keys=False, indent=4)
 f = open(fileDir+"\\arrival.txt", "w")
 f.write(text)
 f.close()
 
 # print(r.text)
-# print(text)
+#print(todayArr.text)
