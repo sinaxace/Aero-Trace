@@ -64,21 +64,9 @@ class BaseCityViewSet(viewsets.ModelViewSet):
         seralizer = BaseCitySerializer(cities, many=True)
         return Response(seralizer.data)
 
-tasks = {
-    1: Task(id=1, name='Demo', owner='xordoquy', status='Done'),
-    2: Task(id=2, name='Model less demo', owner='xordoquy', status='Ongoing'),
-    3: Task(id=3, name='Sleep more', owner='xordoquy', status='New'),
-}
-
-
-def get_next_task_id():
-    return max(tasks) + 1
-
 todayArr = requests.get("https://gtaa-fl-prod.azureedge.net/api/flights/list?type=ARR&day=today&useScheduleTimeOnly=false")
 #tomorrowArr = requests.get("https://gtaa-fl-prod.azureedge.net/api/flights/list?type=ARR&day=tomorrow&useScheduleTimeOnly=false")
-
 #Get file path
-
 parsed = json.loads(todayArr.text)
 schedule = parsed['list']
 
@@ -99,6 +87,5 @@ class TaskViewSet(viewsets.ViewSet):
 #     serializer_class = serializers.TaskSerializer
 
 #     def list(self, request):
-#         serializer = serializers.TaskSerializer(
-#             instance=tasks.values(), many=True)
+#         serializer = serializers.TaskSerializ)
 #         return Response(serializer.data)
