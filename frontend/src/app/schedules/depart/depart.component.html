@@ -32,8 +32,7 @@
         TODO: Check out resource https://demo.mobiscroll.com/angular/select/country-picker#theme=material-dark
     -->
     <select class=country>
-        <option>Select Country</option>
-        <option>Canada</option>
+        <option *ngFor ="let city of dict">{{city}} </option>
     </select>
     <!-- Select City/Region Dropdown -->
     <select class=region>
@@ -91,3 +90,4 @@
     <input routerLink="/result" routerLinkActive="active" type=submit value=Search>
 
 </form>
+

@@ -5,6 +5,8 @@ from .models import Movie,Airline,Country,City
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
+from rest.arrival import Arrivial
+
 from . import serializers
 from . import Task
 import requests
@@ -72,15 +74,35 @@ schedule = parsed['list']
 
 #Get flight id
 id_list = []
+country_list = []
+
 for id_ in schedule:
-      id_list.extend((id_["al"],id_['id2'], id_["schTime"][:10], id_["gate"],id_["term"], id_["routes"]))
+      id_list.extend((id_["al"], id_['id2'], id_["schTime"][:10], id_["gate"], id_["term"], id_["routes"][0]["name"]))
+      country_list.append(id_["routes"][0]["cnty"])
+
+dic = {}
+
+for country in schedule:
+    for c in country_list:
+        dic[c] = []
+
+def adding_city(schedule, dic):
+
+    for s in schedule:
+        if s["routes"][0]["cnty"] in dic:
+            if s["routes"][0]["city"] not in dic[s["routes"][0]["cnty"]]:
+                dic[s["routes"][0]["cnty"]].append(s["routes"][0]["city"])
+    return dic
+    
+
+city_country_list = adding_city(schedule,dic)
 
 class TaskViewSet(viewsets.ViewSet):
     # Required for the Browsable API renderer to have a nice form.
      def list(self, request):
-        return Response(id_list)
+        return Response(city_country_list)
 
-        
+    
 
 # class TaskViewSet(viewsets.ViewSet):
 #     # Required for the Browsable API renderer to have a nice form.
