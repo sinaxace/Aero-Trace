@@ -20,6 +20,14 @@ import { ResultComponent } from './schedules/result/result.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { WrittenreviewComponent } from './writtenreview/writtenreview.component';
 import { EstimatedComponent } from './estimated/estimated.component';
+import { SettingsComponent } from './settings/settings.component';
+import { OptionsComponent } from './settings/options/options.component';
+import { NotificationsComponent } from './settings/notifications/notifications.component';
+import { LanguageComponent } from './settings/language/language.component';
+import { ThemesComponent } from './settings/themes/themes.component';
+import { SecurityComponent } from './settings/security/security.component';
+import { AccessibilityComponent } from './settings/accessibility/accessibility.component';
+import { DatausageComponent } from './settings/datausage/datausage.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +43,15 @@ import { EstimatedComponent } from './estimated/estimated.component';
     ResultComponent,
     ReviewsComponent,
     WrittenreviewComponent,
-    EstimatedComponent
+    EstimatedComponent,
+    SettingsComponent,
+    OptionsComponent,
+    NotificationsComponent,
+    LanguageComponent,
+    ThemesComponent,
+    SecurityComponent,
+    AccessibilityComponent,
+    DatausageComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,15 @@
+<!-- router-outlet redirects to options component first.-->
+<router-outlet></router-outlet>
+
+
+<!-- There will always be an option to save or discard changes -->
+<!--Disabled for now though-->
+<div id=change>
+    <span *ngIf="!isChanged; else change">...no changes made</span>
+    <ng-template #change>...changes made</ng-template> <br>
+    <div>
+        <button disabled mat-button>Discard</button>
+        <button disabled mat-button>Save</button>
+    </div>
+
+</div>
