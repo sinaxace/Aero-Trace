@@ -10,29 +10,27 @@ import { ApiService } from '../api.service';
 })
 export class HomeComponent implements OnInit {
  
-  //title = 'Aero-Trace';
-  cities = [{ title: 'test' }];
-  city_id;
-  city_name;
-  country_id;
+
 
 
   ngOnInit() {
   }
-  constructor(private api: ApiService) {
-    this.getMovies();
-  }
-  getMovies = () => {
-    this.api.getCity().subscribe(
-      data => {
-        this.cities = data;
+
+  
+  // constructor(private api: ApiService) {
+  //   this.getMovies();
+  // }
+  // getMovies = () => {
+  //   this.api.getCity().subscribe(
+  //     data => {
+  //       this.cities = data;
        
-      },
-      error => {
-        console.log(error);
-      }
-    );
-  }
+  //     },
+  //     error => {
+  //       console.log(error);
+  //     }
+  //   );
+  // }
   // movieClicked = (movie) => {
   //   console.log(movie.id);
   //   this.api.getOneMovie(movie.id).subscribe(
