@@ -10,7 +10,8 @@ export class ApiService {
   httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
 
   constructor(private http: HttpClient) { }
-    getAllMovies(): Observable < any > {
+  
+    getAllCity(): Observable < any > {
       return this.http.get(this.baseurl + '/tasks/',
         { headers: this.httpHeaders });
     }
