@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../service/api.service';
 
-import { Countries } from '../../class/Country';
 
 @Component({
   selector: 'app-depart',
@@ -21,8 +20,7 @@ export class DepartComponent implements OnInit {
 
 
   dict = [1,2,4]; // create an empty array
-  allcountry: Countries[];
-  countryDisplay:Countries[];
+  countrytest=[];
 
 
 
@@ -30,7 +28,8 @@ export class DepartComponent implements OnInit {
     this.countryApi.getAllCity().subscribe(
       data => {
         this.dic = data;
-        console.log(this.dic);
+        this.countrytest=Object.keys(this.dic);
+        console.log(this.dic["CAN"]);
         console.log(Object.keys(this.dic));
       }
     )
@@ -38,17 +37,6 @@ export class DepartComponent implements OnInit {
   
   ngOnInit() {
     this.isSpecific = false;
-    this.countryApi.getAllCity()
-    .subscribe
-    (
-      data=>
-      {
-        this.allcountry = data;
-        console.log('-----Nancy------');
-        console.log(this.allcountry);
-        console.log('-----Nancy------')
-      }
-    )
   }
   // constructor(private api: ApiService) {
   //   this.getMovies();

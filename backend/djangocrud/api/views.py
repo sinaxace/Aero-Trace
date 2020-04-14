@@ -115,14 +115,18 @@ print('-------city_country_list------')
 print(city_country_list)
 
 #Genertate new country city json format
-arrivalCity = {}
-def arrival_coutry_city(schedule,dic):
-    arrivalCity["arrivalCity"] = []
-    for country in city_country_list1          :
+# arrivalCity = {}
+# def arrival_coutry_city(schedule,dic):
+#     arrivalCity["arrivalCity"] = []
+#     for country in city_country_list1          :
 
         
-arrivalCity["arrivalCity"] = []
-# arrivalCity["arrivalCity"].append({"Country":"CAN","City":[]})
+# arrivalCity["arrivalCity"] = []
+# arrivalCity["arrivalCity"].append({"Country":"CAN","City":['ON']})
+# arrivalCity["arrivalCity"].append({"Country":"CAN"})
+# arrivalCity["arrivalCity"].
+# print('-----arrivalCity["arrivalCity"][0]----')
+# print(arrivalCity["arrivalCity"][0].append({"City":"a"}))
 # arrivalCity["arrivalCity"].append({"Country":"CAN","City":["a"]})
 # arrivalCity["arrivalCity"]["Country"].append({"City":"b"})
 
@@ -133,8 +137,8 @@ arrivalCity["arrivalCity"] = []
 
 # arrivalCity["arrivalCity"].append({"Country":"CAN","City":["a","b"]})
 
-print('-------arrivalCity------')
-print(arrivalCity)    
+# print('-------arrivalCity------')
+# print(arrivalCity)    
 
 
 

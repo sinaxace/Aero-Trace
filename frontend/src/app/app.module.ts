@@ -20,7 +20,6 @@ import { ResultComponent } from './schedules/result/result.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { WrittenreviewComponent } from './writtenreview/writtenreview.component';
 import { EstimatedComponent } from './estimated/estimated.component';
-import { ApiService} from './service/api.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +47,7 @@ import { ApiService} from './service/api.service';
     OwlDateTimeModule,
     OwlNativeDateTimeModule
   ],
-  providers: [ApiService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
