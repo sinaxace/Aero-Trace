@@ -1,1 +1,39 @@
-<p>language works!</p>
+<!-- TODO: Figure out how to use i18n localization tool.
+    Translation Notes: I followed a guide to Angular localization 
+            in order to translate the application. The built-in
+            tech is called i18n template translation.
+
+    The i18n template translation process has four phases:
+
+        -  Mark static text messages in your component templates for translation.
+
+        -  Create a translation file: Use the Angular CLI xi18n command to extract the 
+            marked text into an industry-standard translation source file.
+
+        -  Edit the generated translation file: Translate the extracted text into the target language.
+
+        -  Add the target locale and language translation to the application's configuration.
+
+        -  Merge the completed translation file into the application. 
+
+
+    Check out the i18n guide for Angular localization: https://angular.io/guide/i18n
+    
+    Also this youtube video tutorial helped simplify configuration: https://www.youtube.com/watch?v=88hE8_M53SA
+-->
+
+<!-- <h1 i18n="Welcome Everyone | A greeting to the world!@@welcomeEveryone">
+    Hey everyone! How y'all doing?
+</h1> -->
+<button routerLink="/settings" id="back" mat-button>
+    <img src="../../../assets/images/whiteArrowLeft.png" alt="Left Arrow">
+    <span>Settings</span>
+</button>
+<h3>I want to read the app in...</h3>
+<mat-form-field appearance="outline">
+    <mat-label>Select Language</mat-label>
+    <mat-select panelClass="selectLang">
+        <mat-option value="english">English</mat-option>
+        <mat-option value="english">Français</mat-option>
+    </mat-select>
+</mat-form-field>

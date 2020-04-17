@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-notifications',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./notifications.component.less']
 })
 export class NotificationsComponent implements OnInit {
+
+  @Input() isChanged: boolean;
 
   constructor() { }
 

@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArriveComponent implements OnInit {
 
+  isSpecific: boolean;
+
   constructor() { }
 
   ngOnInit() {
+    this.isSpecific = false;
   }
 
 }

@@ -9,7 +9,7 @@
 </button>
 <h3>Notify me about...</h3>
 <ul id="notify">
-    <li>
+    <li (click)="isChanged = true">
         <mat-slide-toggle>Delayed Flights</mat-slide-toggle>
     </li>
     <li>
@@ -22,3 +22,13 @@
         <mat-slide-toggle>Restaurant Suggestions</mat-slide-toggle>
     </li>
 </ul>
+
+<h4>Enable Push Notifications?</h4>
+<div class="push">
+    <button mat-icon-button>
+        <mat-icon>thumb_up_alt</mat-icon><br>
+    </button>
+    <button mat-icon-button>
+        <mat-icon>thumb_down_alt</mat-icon> <br>
+    </button>
+</div>
