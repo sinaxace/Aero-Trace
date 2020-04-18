@@ -32,12 +32,13 @@
         TODO: Check out resource https://demo.mobiscroll.com/angular/select/country-picker#theme=material-dark
     -->
     <select class=country>
-        <option *ngFor ="let city of countrytest" >{{city}} </option>
+        <option>Select Country</option>
+        <option *ngFor ="let country of countrytest" >{{country}} </option>
     </select>
     <!-- Select City/Region Dropdown -->
     <select class=region>
         <option>Select City</option>
-        <option>Toronto ON</option>
+        <option *ngFor ="let city of citytest" >{{city}} </option>
     </select>
 
     <!-- Select Departure Date -->

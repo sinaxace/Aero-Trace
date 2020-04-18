@@ -21,6 +21,7 @@ export class DepartComponent implements OnInit {
 
   dict = [1,2,4]; // create an empty array
   countrytest=[];
+  citytest=[]; 
 
 
 
@@ -30,10 +31,16 @@ export class DepartComponent implements OnInit {
         this.dic = data;
         this.countrytest=Object.keys(this.dic);
         console.log(this.dic["CAN"]);
+        this.citytest = this.dic["CAN"];
         console.log(Object.keys(this.dic));
       }
     )
   };
+  // show=[]
+  // showvalue;
+  // onChangeCountry() {
+  //   console.log(this.showvalue);
+  // }
   
   ngOnInit() {
     this.isSpecific = false;

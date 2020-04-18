@@ -15,5 +15,10 @@ export class ApiService {
       return this.http.get(this.baseurl + '/tasks/',
         { headers: this.httpHeaders });
     }
+  registerUser(userData): Observable<any> { 
+    console.log(userData);
+    return this.http.get(this.baseurl + '/users/', userData);
+    
+    }
   }
 
