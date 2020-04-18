@@ -18,13 +18,16 @@ from django.urls import include, path
 from rest_framework import routers
 from djangocrud.api import views
 
-from djangocrud.api.models import Airline, Movie, Country, City
+from djangocrud.api.models import Airline, Country, City
 from djangocrud.api.views import TaskViewSet
 
 
+
+## TODO:
+### Create move all the paths for djangocrud/api applications to the api/urls.py class
 router = routers.DefaultRouter()
+router.register(r'users', views.UserViewSet)
 router.register(r'Airline', views.BaseAirlineViewSet)
-router.register(r'Movie', views.MovieViewSet)
 router.register(r'Country', views.BaseCountryViewSet)
 router.register(r'City', views.BaseCityViewSet)
 router.register(r'tasks', TaskViewSet, basename='tasks')

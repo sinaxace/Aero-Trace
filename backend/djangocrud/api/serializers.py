@@ -29,23 +29,29 @@ class BaseCitySerializer(serializers.ModelSerializer):
     class Meta:
         model = City
         fields = ['city_id', 'city_name', 'country_id']
-        
-STATUSES = (
-    'New',
-    'Ongoing',
-    'Done',
-)
+
+#TODO: Change the name of the Task and Movie functions to FLight related names.
 
 class TaskSerializer(serializers.Serializer):
-    id = serializers.IntegerField(read_only=True)
-    name = serializers.CharField(max_length=256)
-    owner = serializers.CharField(max_length=256)
-    status = serializers.ChoiceField(choices=STATUSES, default='New')
+     id = serializers.IntegerField(read_only=True)
+    # name = serializers.CharField(max_length=256)
+    # owner = serializers.CharField(max_length=256)
+    # status = serializers.ChoiceField(choices=STATUSES, default='New')
 
+    # def create(self, validated_data):
+    #     return Task(id=None, **validated_data)
+
+    # def update(self, instance, validated_data):
+    #     for field, value in validated_data.items():
+    #         setattr(instance, field, value)
+    #     return instance
+
+class UserSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = User
+        fields = ['id', 'username','email','password']
+        extra_kwargs = {'password': {'write_only': True, 'required': True}}
+        
     def create(self, validated_data):
-        return Task(id=None, **validated_data)
-
-    def update(self, instance, validated_data):
-        for field, value in validated_data.items():
-            setattr(instance, field, value)
-        return instance
+        user = User.objects.create_user(**validated_data)
+        return user

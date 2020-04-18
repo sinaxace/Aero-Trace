@@ -41,7 +41,7 @@ for country in schedule:
         dic[c] = []
 
 def adding_city(schedule, dic):
-
+    
     for s in schedule:
         if s["routes"][0]["cnty"] in dic:
             if s["routes"][0]["city"] not in dic[s["routes"][0]["cnty"]]:

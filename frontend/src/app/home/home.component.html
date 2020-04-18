@@ -2,6 +2,12 @@
     <h1><span class=airport>Current Airport</span> <br>
         Toronto Pearson
     </h1>
+    <div class="login">
+        <input [(ngModel)]="register.username" placeholder="Username"><br>
+        <input [(ngModel)]="register.passwird" placeholder="Username" type="password"><br>
+        <input [(ngModel)]="register.email" placeholder="Username"><br>
+        <button (click)="registerUser()">Register User></button>
+    </div>
     <p class=wrong>Wrong Airport? <br>Click Below!</p>
     <!-- To test 404 page for now-->
     <button mat-button routerLink="/err">
