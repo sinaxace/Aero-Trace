@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../service/api.service';
+import { ApiService } from '../../api.service';
 
 
 @Component({
@@ -29,7 +29,8 @@ export class DepartComponent implements OnInit {
 
 
   getdropdown = () => {
-    this.api.getCountryCityDep().subscribe(
+    
+    this.countryApi.getCountryCityDep().subscribe(
       data => {
         this.country_city_list_dep = data
         this.country_list_dep=Object.keys(this.country_city_list_dep)
