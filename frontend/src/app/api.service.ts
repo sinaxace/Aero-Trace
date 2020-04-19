@@ -14,13 +14,6 @@ export class ApiService {
       return this.http.get(this.baseurl + '/tasks/',
         { headers: this.httpHeaders });
     }
-<<<<<<< HEAD
-    registerUser(userData): Observable<any> { 
-      console.log(userData);
-      return this.http.get(this.baseurl + '/users/', userData);
-      
-      }
-=======
     getCountryCityDep(): Observable < any > {
       return this.http.get(this.baseurl + '/Dep_Country_City_list/',
         { headers: this.httpHeaders });
@@ -30,6 +23,5 @@ export class ApiService {
     console.log(userData);
     return this.http.get(this.baseurl + '/users/', userData);
     }
->>>>>>> origin/master
   }
 

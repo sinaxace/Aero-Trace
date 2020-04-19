@@ -29,15 +29,6 @@ export class DepartComponent implements OnInit {
 
 
   getdropdown = () => {
-<<<<<<< HEAD
-    this.countryApi.getAllCity().subscribe(
-      data => {
-        this.dic = data;
-        this.countrytest=Object.keys(this.dic);
-        console.log(this.dic["CAN"]);
-        this.citytest = this.dic["CAN"];
-        console.log(Object.keys(this.dic));
-=======
     this.api.getCountryCityDep().subscribe(
       data => {
         this.country_city_list_dep = data
@@ -45,7 +36,6 @@ export class DepartComponent implements OnInit {
         console.log(this.country_city_list_dep);
         console.log(Object.keys(this.country_city_list_dep))
         
->>>>>>> origin/master
       }
     )
   };

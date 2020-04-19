@@ -5,11 +5,6 @@ import json
 import os
 import sys
 
-<<<<<<< HEAD
-
-#Get fligh API
-todayDep = requests.get("https://gtaa-fl-prod.azureedge.net/api/flights/list?type=DEP&day=today&useScheduleTimeOnly=false")
-=======
 #Get fligh API
 todayDep = requests.get("https://gtaa-fl-prod.azureedge.net/api/flights/list?type=DEP&day=today&useScheduleTimeOnly=false")
 parsed = json.loads(todayDep.text)
@@ -53,4 +48,3 @@ def adding_city_dep(schedule_dep, dic_country_city_dep_list):
 country_city_list = adding_city_dep(schedule_dep,dic_country_city_dep_list)
 print('-----print(adding_city_dep(schedule_dep------')
 print(adding_city_dep(schedule_dep, dic_country_city_dep_list))
->>>>>>> origin/master
