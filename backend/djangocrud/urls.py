@@ -20,6 +20,7 @@ from djangocrud.api import views
 
 from djangocrud.api.models import Airline, Country, City
 from djangocrud.api.views import TaskViewSet
+from djangocrud.api.views import Country_City_List_Dep
 
 
 
@@ -31,6 +32,7 @@ router.register(r'Airline', views.BaseAirlineViewSet)
 router.register(r'Country', views.BaseCountryViewSet)
 router.register(r'City', views.BaseCityViewSet)
 router.register(r'tasks', TaskViewSet, basename='tasks')
+router.register(r'Dep_Country_City_list', Country_City_List_Dep, basename='Dep_Country_City_list')
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.

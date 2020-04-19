@@ -24,7 +24,7 @@ country_list = []
 city_list = []
 
 for id_ in schedule:
-    id_list.extend((id_["al"], id_['id2'], id_["schTime"][:10], id_["gate"], id_["term"], id_["routes"]))
+    # id_list.extend((id_["al"], id_['id2'], id_["schTime"][:10], id_["gate"], id_["term"], id_["routes"]))
     if id_["routes"][0]["cnty"] in country_list:
         pass
     else:
@@ -33,12 +33,17 @@ for id_ in schedule:
         pass
     else:
         city_list.append(id_["routes"][0]["city"])
-
+print('-----country_list_dep--------')
+print(country_list)
+print('-----city_list--------')
+print(city_list)
 dic = {}
 
 for country in schedule:
     for c in country_list:
         dic[c] = []
+print('-----dic--------')
+print(dic)
 
 def adding_city(schedule, dic):
     
@@ -50,6 +55,7 @@ def adding_city(schedule, dic):
 
 
 country_city_list = adding_city(schedule,dic)
+print('-----adding_city(schedule,dic)--------')
 print(adding_city(schedule,dic))
 
 
