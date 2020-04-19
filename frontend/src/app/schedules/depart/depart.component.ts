@@ -12,9 +12,12 @@ export class DepartComponent implements OnInit {
 
   isSpecific: boolean;
   dic={}
+  country_city_list_dep={}
+  country_list_dep={}
 
   constructor(private countryApi: ApiService) { 
     this.getdropdown();
+    this.country_city_list_dep={}
     this.dic = {}
   }
 
@@ -26,6 +29,7 @@ export class DepartComponent implements OnInit {
 
 
   getdropdown = () => {
+<<<<<<< HEAD
     this.countryApi.getAllCity().subscribe(
       data => {
         this.dic = data;
@@ -33,6 +37,15 @@ export class DepartComponent implements OnInit {
         console.log(this.dic["CAN"]);
         this.citytest = this.dic["CAN"];
         console.log(Object.keys(this.dic));
+=======
+    this.api.getCountryCityDep().subscribe(
+      data => {
+        this.country_city_list_dep = data
+        this.country_list_dep=Object.keys(this.country_city_list_dep)
+        console.log(this.country_city_list_dep);
+        console.log(Object.keys(this.country_city_list_dep))
+        
+>>>>>>> origin/master
       }
     )
   };
