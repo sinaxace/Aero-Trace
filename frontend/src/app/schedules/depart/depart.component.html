@@ -31,14 +31,13 @@
     <!-- Select Country Dropdown
         TODO: Check out resource https://demo.mobiscroll.com/angular/select/country-picker#theme=material-dark
     -->
-    <select class=country>
+    <select class=country (change)='countrySelected($event)'>
         <option>Select Country</option>
-        <option *ngFor ="let city of country_list_dep">{{city}} </option>
+        <option *ngFor ="let country of country_droplist_dep" [ngValue]="country"> {{country}}</option>
     </select>
     <!-- Select City/Region Dropdown -->
     <select class=region>
-        <option>Select City</option>
-        <option *ngFor ="let city of citytest" >{{city}} </option>
+        <option *ngFor ="let city of city_droplist_dep" [ngValue]="city" >{{city}} </option>
     </select>
 
     <!-- Select Departure Date -->

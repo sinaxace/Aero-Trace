@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../../api.service';
 
 @Component({
   selector: 'app-arrive',
@@ -7,8 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArriveComponent implements OnInit {
 
-  constructor() { }
 
+
+  constructor(private country_dep_api: ApiService) {
+    this.countryDropListArr();
+   }
+   
+   country_city_list=[];
+   country_list = [];
+   city_list = [];   
+
+   countryDropListArr = () => {
+
+   };
   ngOnInit() {
   }
 
