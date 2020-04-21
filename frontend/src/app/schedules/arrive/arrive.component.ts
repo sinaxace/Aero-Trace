@@ -8,7 +8,7 @@ import { ApiService } from '../../api.service';
 })
 export class ArriveComponent implements OnInit {
 
-
+  isSpecific: boolean;
 
   constructor(private country_dep_api: ApiService) {
     this.countryDropListArr();
@@ -22,6 +22,7 @@ export class ArriveComponent implements OnInit {
 
    };
   ngOnInit() {
+    this.isSpecific = false;
   }
 
 }
