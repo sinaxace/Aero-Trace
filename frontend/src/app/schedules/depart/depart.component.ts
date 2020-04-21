@@ -27,7 +27,7 @@ export class DepartComponent implements OnInit {
   country_droplist_dep = [];
   city_droplist_dep = [];
 
-  countrySelected (event:any){
+  country_city_selected (event:any){
     this.select_country=event.target.value;
     this.city_droplist_dep = this.country_city_drop_list_dep[this.select_country];
     return this.select_country;
@@ -42,7 +42,7 @@ export class DepartComponent implements OnInit {
         console.log(Object.keys(this.country_city_drop_list_dep));
         console.log(this.country_city_drop_list_dep['CAN']);
         console.log('---this.select_country..get dropdown-');
-        console.log(this.countrySelected);
+        console.log(this.country_city_selected);
       }
     )
   };

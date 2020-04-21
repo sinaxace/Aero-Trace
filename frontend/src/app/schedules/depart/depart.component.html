@@ -31,7 +31,7 @@
     <!-- Select Country Dropdown
         TODO: Check out resource https://demo.mobiscroll.com/angular/select/country-picker#theme=material-dark
     -->
-    <select class=country (change)='countrySelected($event)'>
+    <select class=country (change)='country_city_selected($event)'>
         <option>Select Country</option>
         <option *ngFor ="let country of country_droplist_dep" [ngValue]="country"> {{country}}</option>
     </select>
