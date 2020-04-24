@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable({
   providedIn: 'root'
@@ -23,5 +23,6 @@ export class ApiService {
     console.log(userData);
     return this.http.get(this.baseurl + '/users/', userData);
     }
+  
   }
 

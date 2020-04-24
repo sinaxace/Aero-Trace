@@ -20,15 +20,16 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.register = {
-      username: "",
-      password: "",
-      email: ""
+      username: '',
+      password: '',
+      email: ''
     };
   }
   registerUser() {
+    console.log('alo')
     this.api.registerUser(this.register).subscribe(
       response => {
-        alert('User' + this.register.username + 'Has neen created');
+        alert('User' + this.register.username + 'Has been created');
       },
       error => console.log(error)
     )

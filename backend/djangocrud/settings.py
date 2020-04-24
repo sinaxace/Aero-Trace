@@ -24,7 +24,7 @@ SECRET_KEY = '+ivha7oi+zqr8+w@3v#n8k^p^g1n&(45k6o(=+$j@rf7585bxd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
+CORS_ORIGIN_ALLOW_ALL=True
 ALLOWED_HOSTS = []
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:4200'
@@ -55,8 +55,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
-
-
 ]
 
 ROOT_URLCONF = 'djangocrud.urls'
@@ -114,6 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
     ]

@@ -1,5 +1,8 @@
 from django.contrib.auth.models import User
 from rest_framework import viewsets
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
+from rest_framework.authtoken.views import ObtainAuthToken
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.decorators import api_view
 from .serializers import UserSerializer,MovieSerializer, MovieMiniSerializer, Airline, BaseAirlineSerializer, BaseCountrySerializer,BaseCitySerializer
 from .models import Airline,Country,City
@@ -11,7 +14,6 @@ from rest.arrival import Arrivial
 from rest.departure import Departure
 
 from . import serializers
-# from . import Task
 import requests
 import json
 
@@ -46,15 +48,20 @@ class BaseCountryViewSet(viewsets.ModelViewSet):
 
 
 class UserViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows users to be viewed or edited.
-    """
     queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
-    permission_classes = [permissions.IsAuthenticated]
 
 
-class BaseCityViewSet(viewsets.ModelViewSet):
+class CustomObtainAuthToken(ObtainAuthToken):
+    def post(self, request, *args, **kwargs):
+        response = super(CustomObtainAuthToken, self).post(request, *args, **kwargs)
+        token = Token.objects.get(key=response.data['token'])
+        user = User.objects.get(id=token.user_id)
+        serializer = UserSerializer(user, many=False)
+        return Response({'token': token.key, 'user': serializer.data})
+
+
+class BaseCityViewSet(viewsets.ViewSet):
     """
     API endpoint that allows users to be viewed or edited.
     """
