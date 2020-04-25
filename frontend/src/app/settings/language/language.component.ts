@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 /* Note: This is the first time I'm using the Shadow DOM 
   Here's a reference towhat I did through a YouTube tutorial:
@@ -9,9 +10,13 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   selector: 'app-language',
   templateUrl: './language.component.html',
   styleUrls: ['./language.component.less'],
-  encapsulation: ViewEncapsulation.Emulated
+  // Encapsulation has to be disabled in order for the
+  // component style to apply to the select panel.
+  encapsulation: ViewEncapsulation.None
 })
 export class LanguageComponent implements OnInit {
+
+  panelColor = new FormControl('red'); // TODO: Change internal styles of form option background (got stuck too long)
 
   constructor() { }
 

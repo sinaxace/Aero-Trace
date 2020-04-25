@@ -26,14 +26,17 @@
     Hey everyone! How y'all doing?
 </h1> -->
 <button routerLink="/settings" id="back" mat-button>
-    <img src="../../../assets/images/whiteArrowLeft.png" alt="Left Arrow">
+    <img src="../.form-container./../assets/images/whiteArrowLeft.png" alt="Left Arrow">
     <span>Settings</span>
 </button>
-<h3>I want to read the app in...</h3>
-<mat-form-field appearance="outline">
-    <mat-label>Select Language</mat-label>
-    <mat-select panelClass="selectLang">
-        <mat-option value="english">English</mat-option>
-        <mat-option value="english">Français</mat-option>
-    </mat-select>
-</mat-form-field>
+<div class="form-container">
+    <h3>I want to read the app in...</h3>
+    <mat-form-field appearance="outline">
+        <mat-label>Select Language</mat-label>
+        <!-- TODO: look into the formControl API. Sample: [formControl]="panelColor"-->
+        <mat-select panelClass="example-panel-red">
+            <mat-option value="red">English</mat-option>
+            <mat-option value="blue">Français</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>

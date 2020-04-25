@@ -1,0 +1,44 @@
+#back {
+    font-size: 25px;
+    color: white;
+
+    img[alt="Left Arrow"] {
+        width: 50px;
+        margin: 15px;
+    }
+}
+
+h3 {
+    color: white;
+    font-weight: normal;
+    font-size: 25px;
+    margin: 15px;
+}
+
+#colour-themes {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    justify-items: center;
+    gap: 30px;
+    padding: 10px 40px;
+
+    @colours: violet,
+    purple,
+    orange,
+    red,
+    blue,
+    green;
+
+    /* each() is like an enhanced for loop & range just means 1 to 6 */
+    each(range(6), {
+            .mat-fab:nth-child(@{value}) {
+                width: 80px;
+                height: 80px;
+                font-size: 20px;
+                color: white;
+                background-color: extract(@colours, @value);
+            }
+        }
+
+    );
+}
