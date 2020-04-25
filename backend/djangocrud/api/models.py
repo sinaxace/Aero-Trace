@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 
 #Create your models here.
 class Movie(models.Model):
@@ -10,7 +11,7 @@ class Airline(models.Model):
     airline_id = models.CharField(primary_key=True, max_length=3)
     airline_name = models.CharField(max_length=30, blank=True, null=True)
     airline_iata = models.CharField(max_length=2, blank=True, null=True)
-    airline_icao = models.CharField(max_length=3, blank=True, null=True)
+    airlinepy_icao = models.CharField(max_length=3, blank=True, null=True)
 
     class Meta:
         managed = False
@@ -33,4 +34,6 @@ class City(models.Model):
         managed = False
         db_table = 'city'
 
+
+    
     
