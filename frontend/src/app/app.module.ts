@@ -28,6 +28,7 @@ import { ThemesComponent } from './settings/themes/themes.component';
 import { SecurityComponent } from './settings/security/security.component';
 import { AccessibilityComponent } from './settings/accessibility/accessibility.component';
 import { DatausageComponent } from './settings/datausage/datausage.component';
+import 'hammerjs';
 
 // for the i18n localization
 import { registerLocaleData } from '@angular/common';

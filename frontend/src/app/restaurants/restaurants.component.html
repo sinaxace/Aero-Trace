@@ -1,27 +1,38 @@
-<section id="restaurant-swipe">
-    <img [ngClass]="'swipe-arrow'" src="../../assets/images/arrowTipLeft.png" alt="Swipe Left">
-    <img [ngClass]="'dining-image'" src="../../assets/images/mcdonalds.jpg" alt="McDonalds inside airport">
-    <img [ngClass]="'swipe-arrow'" src="../../assets/images/arrowTipRight.png" alt="Swipe Right">
-</section>
-<section>
-    <div id="overall-rating">
-        <!-- Only full stars show based on review in component's TS file-->
-        <span *ngFor="let star of rating">
-            <img *ngIf="star; else empty" src="../../assets/images/star_full.png" alt="Full Star">
-            <ng-template #empty><img src="../../assets/images/star.png" alt="Empty Star"></ng-template>
-        </span>
-    </div>
-    <div id="restaurant-info">
-        <button routerLink="/reviews" routerLinkActive="active" mat-button>
-            <img src="../../assets/images/reviews.png" alt="Review Image">
-        </button>
-        <span id="details">
-            <strong id=name>McDonalds</strong>
-            <p>Terminal <span id=location>1</span></p>
-            <p><span id="review-count">44</span> Reviews</p>
-        </span>
-        <button routerLink="/terminals" routerLinkActive="active" mat-button>
-            <img src="../../assets/images/Asset 1.png" alt="GPS Icon">
-        </button>
-    </div>
-</section>
+<!--
+    mat-card reference: https://material.angular.io/components/card/overview
+    
+    mat-card attribute notes:
+        - [@cardAnimator] is targeting the animation decorator from hammer-card.component.ts
+        - (@cardAnimator.done) is an event from Angular which triggers the method in the string once the animation's done.
+        - (swipe) actions are hammerjs-based touch events.
+    HammerJS Swipe reference: https://hammerjs.github.io/recognizer-swipe/
+    -->
+<mat-card [@cardAnimator]="animationState" (@cardAnimator.done)="resetAnimationState()">
+    <section id="restaurant-swipe">
+        <img [ngClass]="'swipe-arrow'" src="../../assets/images/arrowTipLeft.png" alt="Swipe Left">
+        <img (swipeleft)="startAnimation()" [ngClass]="'dining-image'" src="{{diner.image}}" alt="{{diner.name}}">
+        <img [ngClass]="'swipe-arrow'" src="../../assets/images/arrowTipRight.png" alt="Swipe Right">
+    </section>
+    <section>
+        <div id="overall-rating">
+            <!-- Only full stars show based on review in component's TS file-->
+            <span *ngFor="let star of diner.rating">
+                <img *ngIf="star; else empty" src="../../assets/images/star_full.png" alt="Full Star">
+                <ng-template #empty><img src="../../assets/images/star.png" alt="Empty Star"></ng-template>
+            </span>
+        </div>
+        <div id="restaurant-info">
+            <button routerLink="/reviews" routerLinkActive="active" mat-button>
+                <img src="../../assets/images/reviews.png" alt="Review Image">
+            </button>
+            <span id="details">
+                <strong id=name>{{diner.name}}</strong>
+                <p>Terminal <span id=location>{{diner.terminal}}</span></p>
+                <p><span id="review-count">{{diner.reviews}}</span> Reviews</p>
+            </span>
+            <button routerLink="/terminals" routerLinkActive="active" mat-button>
+                <img src="../../assets/images/Asset 1.png" alt="GPS Icon">
+            </button>
+        </div>
+    </section>
+</mat-card>
