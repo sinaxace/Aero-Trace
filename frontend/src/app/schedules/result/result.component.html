@@ -12,8 +12,15 @@
     </thead>
 
     <tbody>
-        <tr *ngFor = "let country of country_droplist_dep">
-            <td>{{country}}</td>
+        <tr *ngFor = "let termianls of dep_flight_data">
+            <td>{{termianls.schTime}}</td>
+            <td>{{termianls.status}}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>{{termianls.terminal}}</td>
+            <td>{{termianls.gate}}</td>
+
         </tr>
     </tbody>
     <!-- <tbody>
