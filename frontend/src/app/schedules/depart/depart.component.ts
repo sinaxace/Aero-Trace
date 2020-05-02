@@ -11,6 +11,7 @@ import { ApiService } from '../../api.service';
 export class DepartComponent implements OnInit {
 
   isSpecific: boolean;
+  isShowSelectCity = true;
   dic_country_city_dep = {}
   country_city_drop_list_dep = {}
   country_list_dep = {}
@@ -28,6 +29,7 @@ export class DepartComponent implements OnInit {
   city_droplist_dep = [];
 
   country_city_selected (event:any){
+    this.isShowSelectCity = false;
     this.select_country=event.target.value;
     this.city_droplist_dep = this.country_city_drop_list_dep[this.select_country];
     return this.select_country;
