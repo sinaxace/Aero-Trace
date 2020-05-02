@@ -14,14 +14,22 @@ export class ApiService {
       return this.http.get(this.baseurl + '/tasks/',
         { headers: this.httpHeaders });
     }
+
+    //Departure country and city API url
     getCountryCityDep(): Observable < any > {
       return this.http.get(this.baseurl + '/Dep_Country_City_list/',
         { headers: this.httpHeaders });
     }
 
-  registerUser(userData): Observable<any> { 
-    console.log(userData);
-    return this.http.get(this.baseurl + '/users/', userData);
+    //Departure flight schedule today
+    getDepFlightSchedule(): Observable < any > {
+      return this.http.get(this.baseurl + '/Dep_Flight_Schedule/',
+        { headers: this.httpHeaders });
+    }
+
+    registerUser(userData): Observable<any> { 
+      console.log(userData);
+      return this.http.get(this.baseurl + '/users/', userData);
     }
   
   }
