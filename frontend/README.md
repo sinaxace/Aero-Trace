@@ -3,14 +3,19 @@ Note: Be sure to add the node_modules folder using the npm command. Alternativel
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
 
-## Leaflet Library Installation (for terminal maps):
+## HammerJS npm Installation for Angular Material animations:
+Run the command `npm install --save hammerjs` if the Angular CLI didn't install it already.
+
+## i18n Localization for a multi-lingual site:
+Type `ng add @angular/localize` to install Angular's i18n tool so that language settings will work.
+
+## Leaflet Library Installation for terminal maps:
 Run the command `npm install leaflet --save` and create a relative string url inside `./angular.json` for both `"styles" []` and `"scripts" []` config arrays.
 
 After doing this, follow the tutorial below.
 
 The following link is a tutorial by Chris Engelsma who perfectly explains how to setup the initial map configurations in an angular 8 project.
 https://alligator.io/angular/angular-and-leaflet/ 
-
 
 
 
