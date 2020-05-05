@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-
+import datetime
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -24,7 +24,7 @@ SECRET_KEY = '+ivha7oi+zqr8+w@3v#n8k^p^g1n&(45k6o(=+$j@rf7585bxd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-CORS_ORIGIN_ALLOW_ALL=True
+#CORS_ORIGIN_ALLOW_ALL=True
 ALLOWED_HOSTS = []
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:4200'
@@ -32,6 +32,7 @@ CORS_ORIGIN_WHITELIST = [
 
 # Application definition
 
+#rest_framework.authtoken -> Django rest built-in token authentication
 INSTALLED_APPS = [
     'djangocrud.api',
     'corsheaders',
@@ -112,12 +113,24 @@ AUTH_PASSWORD_VALIDATORS = [
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
         'rest_framework.authentication.TokenAuthentication',
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
     ]
 }
 
+#JWT Token Settings
+## We are giving 1 hour of token expiration time.
+JWT_AUTH = {
+    'JWT_ALLOW_REFRESH': True,
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(seconds=3600),
+}
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+   # 'django.authentication.EmailAuthBackend',
+]
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
