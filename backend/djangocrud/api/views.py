@@ -11,6 +11,8 @@ from rest_framework import permissions
 from rest_framework.views import APIView
 from rest_framework import status
 from rest.arrival import Arrivial
+from rest.departure import Departure
+from rest.result import depResult
 
 from . import serializers
 import requests
@@ -80,7 +82,13 @@ class TaskViewSet(viewsets.ViewSet):
      def list(self, request):
         return Response(Arrivial.adding_city(Arrivial.schedule,Arrivial.dic))
 
-    
+class Country_City_List_Dep(viewsets.ViewSet):
+    def list(self, request):
+        return Response(Departure.adding_city_dep(Departure.schedule_dep,Departure.dic_country_city_dep_list))
+        
+class Dep_Flight_Schedule(viewsets.ViewSet):
+    def list(self, request):
+        return Response(depResult.dep_flight_schedule(depResult.schedule_dep))
 
 # class TaskViewSet(viewsets.ViewSet):
 #     # Required for the Browsable API renderer to have a nice form.

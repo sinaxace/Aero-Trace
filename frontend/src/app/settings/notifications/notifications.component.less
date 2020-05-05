@@ -1,0 +1,73 @@
+// @import '../settings.component.less';
+
+#back {
+    font-size: 25px;
+    color: white;
+
+    img[alt="Left Arrow"] {
+        width: 50px;
+        margin: 15px;
+    }
+}
+
+h3,
+h4 {
+    font-size: 25px;
+    color: white;
+    font-weight: normal;
+    margin: 15px;
+}
+
+#notify {
+    display: flex;
+    flex-direction: column;
+    color: white;
+
+    li {
+        list-style: none;
+        font-size: 20px;
+        margin: 10px;
+
+        /* Specific slide toggle styles below.
+        Note: ::ng-deep is for overriding any 
+                prebuilt css classes from material-UI
+    */
+
+        ::ng-deep .mat-slide-toggle-bar {
+            height: 17px;
+            width: 37px;
+        }
+
+        ::ng-deep .mat-slide-toggle-thumb .mat-slide-toggle-thumb-container {
+            height: 23px;
+            width: 23px;
+        }
+
+        ::ng-deep .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb-container {
+            transform: translate3d(18px, 0, 0) !important;
+        }
+    }
+}
+
+.push {
+    text-align: center;
+
+    .mat-icon-button {
+        opacity: 60%;
+        color: #BF0000;
+        background: white;
+        width: 70px;
+        height: 70px;
+        margin: 0px 20px;
+    }
+
+    .mat-icon-button:focus {
+        opacity: 100%;
+    }
+
+    mat-icon {
+        font-size: 50px;
+        position: relative;
+        right: 10px;
+    }
+}
