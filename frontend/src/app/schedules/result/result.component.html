@@ -19,7 +19,7 @@
             However, if 2 destinaion index 0 is transport and the index 1 is final destinaiton -->
             <td *ngIf="termianls.destination?.length < 2">
                 {{termianls.destination[0].country}},&nbsp;
-                {{termianls.destination[0].city}}</td><!-- Length 1-->
+                {{termianls.destination[0].city}}</td>
             <td *ngIf="termianls.destination?.length > 1">
                 {{termianls.destination[1].city}},&nbsp;
                 {{termianls.destination[1].country}}<br>
@@ -27,6 +27,15 @@
                 {{termianls.destination[0].city}},&nbsp;
                 {{termianls.destination[0].country}}
             </td>
+            <!-- <td *ngIf="termianls.destination?.length < 2; else transport">
+                    {{termianls.destination[0].country}},&nbsp;
+                    {{termianls.destination[0].city}}</td>
+            <ng-template #transport>
+                    {{termianls.destination[1].city}},&nbsp;
+                    {{termianls.destination[1].country}}<br>
+                    VIA&nbsp;
+                    {{termianls.destination[0].city}},&nbsp;
+                    {{termianls.destination[0].country}}</ng-template> -->
             <td></td>
             <td></td>
             <td>{{termianls.terminal}}</td>

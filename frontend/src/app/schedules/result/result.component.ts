@@ -27,14 +27,8 @@ export class ResultComponent implements OnInit {
     this.dep_flight_schedule.getDepFlightSchedule().subscribe(
       data => {
         this.dep_flight_data = data;
-        // this.dep_flight_termianl = this.dep_flight_data['terminal'];
-        // this.country_droplist_dep = Object.keys(this.dep_flight_data)
         console.log(this.dep_flight_data);
-        // console.log(this.dep_flight_data['terminal']);
-        // console.log(Object.keys(this.dep_flight_data));
-        // console.log(this.dep_flight_data['CAN']);
-        // console.log('---this.select_country..get dropdown-');
-        // console.log(this.country_city_selected);
+
       }
     )
   };
