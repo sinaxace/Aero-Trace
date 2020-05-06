@@ -36,8 +36,16 @@
                     VIA&nbsp;
                     {{termianls.destination[0].city}},&nbsp;
                     {{termianls.destination[0].country}}</ng-template> -->
-            <td></td>
-            <td></td>
+            <td>
+                <div *ngFor="let flight of termianls.flight">
+                    {{flight.airline_name}}
+                </div>
+            </td>
+            <td>
+                <div *ngFor="let flight of termianls.flight">
+                    {{flight.id2}}
+                </div>
+            </td>
             <td>{{termianls.terminal}}</td>
             <td>{{termianls.gate}}</td>
 
