@@ -58,7 +58,7 @@ export class ApiService {
               this.updateData(data['token']);
           },
           err => {
-              this.errors = err['error'];
+              this.errors = err['error'];``
           }
       );
     }
