@@ -33,6 +33,7 @@ import 'hammerjs';
 // for the i18n localization
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
+import { SearchComponent } from './schedules/result/search/search.component';
 // the second parameter 'fr-FR' is optional
 registerLocaleData(localeFr, 'fr-FR');
 
@@ -59,7 +60,8 @@ registerLocaleData(localeFr, 'fr-FR');
     ThemesComponent,
     SecurityComponent,
     AccessibilityComponent,
-    DatausageComponent
+    DatausageComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

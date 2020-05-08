@@ -1,3 +1,4 @@
+<app-search></app-search>
 <table class="listing">
     <thead>
         <tr>
@@ -10,11 +11,11 @@
     </thead>
 
     <tbody>
-        <tr *ngFor = "let country of country_droplist_dep">
+        <tr *ngFor="let country of country_droplist_dep">
             <td>{{country}}</td>
         </tr>
     </tbody>
-    <!-- <tbody>
+    <tbody>
         <tr>
             <td>WS2660</td>
             <td>19:02</td>
@@ -64,7 +65,7 @@
             <td>T2</td>
             <td>G14</td>
         </tr>
-    </tbody> -->
+    </tbody>
 </table>
 <section class=listing>
     <button mat-button id=previous>
