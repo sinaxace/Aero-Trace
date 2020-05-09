@@ -9,29 +9,31 @@ import { ApiService } from '../../api.service';
 })
 export class ResultComponent implements OnInit {
 
-  isSpecific: boolean;
-  dic_country_city_dep = {}
-  country_city_drop_list_dep = {}
-  country_list_dep = {}
-  select_country = '';
+  dep_flight_data = {}
 
-  constructor(private country_dep_api: ApiService) {
-    this.getdropdown();
-    this.country_city_drop_list_dep = {}
-    this.dic_country_city_dep = {}
+
+  constructor(private dep_flight_schedule: ApiService) {
+    this.getDepFlightSchedule();
+    this.dep_flight_data = {}
   }
-  country_city_droplist_dep=[];
-  country_droplist_dep = [];
-  city_droplist_dep = [];
-  getdropdown = () => {
-    this.country_dep_api.getCountryCityDep().subscribe(
+
+  dep_flight_scheduleTime =[];
+  dep_flight_updatedTime =[];
+  dep_flight_status = [];
+  dep_flight_termianl = [];
+  dep_flight_gate = [];
+
+  getDepFlightSchedule = () => {
+    this.dep_flight_schedule.getDepFlightSchedule().subscribe(
       data => {
-        this.country_city_drop_list_dep = data
-        this.country_droplist_dep = Object.keys(this.country_city_drop_list_dep)
-        console.log(this.country_city_drop_list_dep);
-        console.log(Object.keys(this.country_city_drop_list_dep));
-        console.log(this.country_city_drop_list_dep['CAN']);
-        console.log('---this.select_country..get dropdown-');
+        this.dep_flight_data = data;
+        // this.dep_flight_termianl = this.dep_flight_data['terminal'];
+        // this.country_droplist_dep = Object.keys(this.dep_flight_data)
+        console.log(this.dep_flight_data);
+        // console.log(this.dep_flight_data['terminal']);
+        // console.log(Object.keys(this.dep_flight_data));
+        // console.log(this.dep_flight_data['CAN']);
+        // console.log('---this.select_country..get dropdown-');
         // console.log(this.country_city_selected);
       }
     )

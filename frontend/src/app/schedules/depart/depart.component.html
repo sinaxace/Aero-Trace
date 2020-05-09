@@ -37,6 +37,7 @@
     </select>
     <!-- Select City/Region Dropdown -->
     <select class=region>
+        <option *ngIf="isShowSelectCity">Select City</option>
         <option *ngFor ="let city of city_droplist_dep" [ngValue]="city" >{{city}} </option>
     </select>
 

@@ -17,11 +17,11 @@ from django.contrib import admin
 from django.urls import include, path
 from rest_framework import routers
 from djangocrud.api import views
-
+from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token
 from djangocrud.api.models import Airline, Country, City
 from djangocrud.api.views import TaskViewSet
 from djangocrud.api.views import Country_City_List_Dep
-
+from djangocrud.api.views import Dep_Flight_Schedule
 
 
 ## TODO:
@@ -33,11 +33,14 @@ router.register(r'Country', views.BaseCountryViewSet)
 router.register(r'City', views.BaseCityViewSet)
 router.register(r'tasks', TaskViewSet, basename='tasks')
 router.register(r'Dep_Country_City_list', Country_City_List_Dep, basename='Dep_Country_City_list')
+router.register(r'Dep_Flight_Schedule', Dep_Flight_Schedule, basename='Dep_Flight_Schedule')
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path(r'api-token-auth/', obtain_jwt_token),#check this urls for Angular user.service.ts
+    path(r'api-token-refresh/', refresh_jwt_token),
 ]

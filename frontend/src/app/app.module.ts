@@ -33,6 +33,7 @@ import 'hammerjs';
 // for the i18n localization
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
+import { ApiService } from './api.service';
 import { SearchComponent } from './schedules/result/search/search.component';
 // the second parameter 'fr-FR' is optional
 registerLocaleData(localeFr, 'fr-FR');
@@ -73,7 +74,7 @@ registerLocaleData(localeFr, 'fr-FR');
     OwlDateTimeModule,
     OwlNativeDateTimeModule
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
