@@ -12,11 +12,13 @@
     </thead>
 
     <tbody>
-        <tr *ngFor = "let termianls of dep_flight_data">
+        <tr *ngFor = "let termianls of dep_flight_display_data">
             <td>{{termianls.schTime}}</td>
             <td>{{termianls.status}}</td>
+
             <!-- If no trasportation only 1 destination so only show destinaion
             However, if 2 destinaion index 0 is transport and the index 1 is final destinaiton -->
+
             <td *ngIf="termianls.destination?.length < 2">
                 {{termianls.destination[0].country}},&nbsp;
                 {{termianls.destination[0].city}}</td>
@@ -27,6 +29,7 @@
                 {{termianls.destination[0].city}},&nbsp;
                 {{termianls.destination[0].country}}
             </td>
+
             <!-- <td *ngIf="termianls.destination?.length < 2; else transport">
                     {{termianls.destination[0].country}},&nbsp;
                     {{termianls.destination[0].city}}</td>
@@ -36,6 +39,7 @@
                     VIA&nbsp;
                     {{termianls.destination[0].city}},&nbsp;
                     {{termianls.destination[0].country}}</ng-template> -->
+
             <td>
                 <div *ngFor="let flight of termianls.flight">
                     {{flight.airline_name}}
@@ -51,7 +55,8 @@
 
         </tr>
     </tbody>
-    <!-- <tbody>
+<!-- 
+    <tbody>
         <tr>
             <td>WS2660</td>
             <td>19:02</td>
@@ -107,10 +112,9 @@
     <button mat-button id=previous>
         <img src="../../assets/images/arrowTipLeft.png" alt="Previous">
     </button>
-    <button class=page>1</button>
-    <button class=page>2</button>
-    <button class=page>3</button>
-    <button class=page>4</button>
+    <button *ngFor = 'let page of counter(amount_flight) ;let i = index' 
+            class="page"
+            (click)="passIndex(i)">{{i+1}}</button>
     <button mat-button id=next>
         <img src="../../assets/images/arrowTipRight.png" alt="Next">
     </button>
