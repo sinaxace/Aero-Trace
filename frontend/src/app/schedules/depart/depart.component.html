@@ -33,7 +33,7 @@
     -->
     <select class=country (change)='country_city_selected($event)'>
         <option>Select Country</option>
-        <option *ngFor ="let country of country_droplist_dep" [ngValue]="country"> {{country}}</option>
+        <option *ngFor="let country of country_droplist_dep" [ngValue]="country"> {{country}}</option>
     </select>
     <!-- Select City/Region Dropdown -->
     <select class=region>
@@ -42,7 +42,9 @@
     </select>
 
     <!-- Select Departure Date -->
-    <input type=date>
+    <!-- <input type=date> -->
+    <input type="date" [ngModel]="today | date:'yyyy-MM-dd'" (ngModelChange)="today = $event" name="dt"
+        class="form-control form-control-rounded" #searchDate>
 
     <!-- The remaining elements are for specific for fields -->
 
@@ -91,4 +93,3 @@
     <input routerLink="/result" routerLinkActive="active" type=submit value=Search>
 
 </form>
-
