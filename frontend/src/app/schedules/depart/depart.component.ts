@@ -16,15 +16,20 @@ export class DepartComponent implements OnInit {
   country_city_drop_list_dep = {}
   country_list_dep = {}
   select_country = '';
+  today: Date;
+
+
 
   constructor(private country_dep_api: ApiService) {
     this.getdropdown();
     this.country_city_drop_list_dep = {}
     this.dic_country_city_dep = {}
+    this.today = new Date();
+
   }
 
 
-  country_city_droplist_dep=[];
+  country_city_droplist_dep = [];
   country_droplist_dep = [];
   city_droplist_dep = [];
 
@@ -57,6 +62,8 @@ export class DepartComponent implements OnInit {
   ngOnInit() {
     this.isSpecific = false;
   }
+
+
   // constructor(private api: ApiService) {
   //   this.getMovies();
   // }
