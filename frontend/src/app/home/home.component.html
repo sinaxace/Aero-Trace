@@ -1,41 +1,11 @@
-<!-- <main id=homebox>
-    <h1><span class=airport>Current Airport</span> <br>
-        Toronto Pearson
-    </h1>
-        
-    <p class=wrong>Wrong Airport? <br>Click Below!</p> -->
-    <!-- To test 404 page for now-->
-    <!-- <button mat-button routerLink="/err">
-        <img src="../../assets/images/Asset 1 (copy).png">
-    </button>
-</main> -->
+<main id=homebox>
+  <h1><span class=airport>Current Airport</span> <br>
+    Toronto Pearson
+  </h1>
 
-<h2>Log In</h2>
-<div class="row" *ngIf="!_userService.token">
-  <div class="col-sm-4">
-    <label>Username:</label><br />
-    <input type="text" name="login-username" [(ngModel)]="user.username" placeholder="username">
-    <input type="text" name="login-email" [(ngModel)]="register.email" placeholder="email">
-    <input type="password" name="login-password" [(ngModel)]="user.password" placeholder="password">
-    <span *ngFor="let error of _userService.errors.username"><br />{{ error }}</span></div>
-  <div class="col-sm-4">
-    <label>Password:</label><br />
-   
-    <span *ngFor="let error of _userService.errors.password"><br />{{ error }}</span>
-  </div>
-  <div class="col-sm-4">
-
-    <button (click)="login()" class="btn btn-primary">Log In</button>&nbsp;<br>
-    <button (click)="registerUser()" class="btn btn-primary">Register</button>
-  </div>
-  <div class="col-sm-12">
-    <span *ngFor="let error of _userService.errors.non_field_errors">{{ error }}<br /></span>
-  </div>
-</div>
-<div class="row" *ngIf="_userService.token">
-  <div class="col-sm-12">You are logged in as {{ _userService.username }}.<br />
-    Token Expires: {{ _userService.token_expires }}<br />
-    <button (click)="refreshToken()" class="btn btn-primary">Refresh Token</button>&nbsp;
-    <button (click)="logout()" class="btn btn-primary">Log Out</button>&nbsp;
-  </div>
-</div>
+  <p class=wrong>Wrong Airport? <br>Click Below!</p>
+  <!-- To test 404 page for now-->
+  <button mat-button routerLink="/err">
+    <img src="../../assets/images/Asset 1 (copy).png">
+  </button>
+</main>

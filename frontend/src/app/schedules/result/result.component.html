@@ -2,25 +2,29 @@
 <table class="listing">
     <thead>
         <tr>
-            <th>Departing Time</th>
-            <th>Status</th>
-            <th>Destination</th>
+            <th>Flight</th>
+            <th>Departure</th>
+            <!-- <th>Status</th> -->
             <th>Airline</th>
-            <th>Flight #</th>
-            <th>Terminal</th>
-            <th class=lastfield>Gate</th>
+            <th>Area</th>
+            <th class=lastfield>Terminal</th>
+
+            <!-- <th class=lastfield>Gate</th> -->
         </tr>
     </thead>
-
+    <!--
     <tbody>
         <tr *ngFor = "let termianls of dep_flight_data">
             <td>{{termianls.schTime}}</td>
             <td>{{termianls.status}}</td>
-            <!-- If no trasportation only 1 destination so only show destinaion
+            -->
+    <!-- If no trasportation only 1 destination so only show destinaion
             However, if 2 destinaion index 0 is transport and the index 1 is final destinaiton -->
-            <td *ngIf="termianls.destination?.length < 2">
+    <!--<td *ngIf="termianls.destination?.length < 2">
                 {{termianls.destination[0].country}},&nbsp;
-                {{termianls.destination[0].city}}</td><!-- Length 1-->
+                {{termianls.destination[0].city}}</td>-->
+    <!-- Length 1-->
+    <!--
             <td *ngIf="termianls.destination?.length > 1">
                 {{termianls.destination[1].city}},&nbsp;
                 {{termianls.destination[1].country}}<br>
@@ -33,56 +37,54 @@
             <td>{{termianls.terminal}}</td>
             <td>{{termianls.gate}}</td>
         </tr>
-    </tbody>
+    </tbody>-->
+    <!-- Maximum 6 fields per schedule view-->
     <tbody>
         <tr>
             <td>WS2660</td>
             <td>19:02</td>
             <td>Air Canada</td>
+            <td>Los Ang. CA</td>
             <td>T2</td>
-            <td>G14</td>
         </tr>
         <tr>
             <td>WS2660</td>
             <td>19:02</td>
             <td>Air Canada</td>
+            <td>Los Ang. CA</td>
             <td>T2</td>
-            <td>G14</td>
+
         </tr>
         <tr>
             <td>WS2660</td>
             <td>19:02</td>
             <td>Air Canada</td>
+            <td>Los Ang. CA</td>
             <td>T2</td>
-            <td>G14</td>
+
         </tr>
         <tr>
             <td>WS2660</td>
             <td>19:02</td>
             <td>Air Canada</td>
+            <td>Los Ang. CA</td>
             <td>T2</td>
-            <td>G14</td>
+
         </tr>
         <tr>
             <td>WS2660</td>
             <td>19:02</td>
             <td>Air Canada</td>
+            <td>Los Ang. CA</td>
             <td>T2</td>
-            <td>G14</td>
-        </tr>
-        <tr>
-            <td>WS2660</td>
-            <td>19:02</td>
-            <td>Air Canada</td>
-            <td>T2</td>
-            <td>G14</td>
+
         </tr>
         <tr class=lastfield>
             <td>WS2660</td>
             <td>19:02</td>
             <td>Air Canada</td>
+            <td>Los Ang. CA</td>
             <td>T2</td>
-            <td>G14</td>
         </tr>
     </tbody>
 </table>

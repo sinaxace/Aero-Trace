@@ -35,6 +35,7 @@ import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 import { ApiService } from './api.service';
 import { SearchComponent } from './schedules/result/search/search.component';
+import { AccountComponent } from './nav/account/account.component';
 // the second parameter 'fr-FR' is optional
 registerLocaleData(localeFr, 'fr-FR');
 
@@ -62,8 +63,10 @@ registerLocaleData(localeFr, 'fr-FR');
     SecurityComponent,
     AccessibilityComponent,
     DatausageComponent,
-    SearchComponent
+    SearchComponent,
+    AccountComponent
   ],
+  entryComponents: [AccountComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
