@@ -12,7 +12,9 @@ import { throwError } from 'rxjs';  // Angular 6/RxJS 6
 })
 export class HomeComponent implements OnInit {
 
+  ngOnInit() {
 
+  }
 
 }
 
