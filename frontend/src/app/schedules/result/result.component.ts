@@ -32,7 +32,11 @@ export class ResultComponent implements OnInit {
   getDepFlightSchedule = () => {
     this.dep_flight_schedule.getDepFlightSchedule().subscribe(
       data => {
+        this.dep_flight_data = [];
+        console.log(this.dep_flight_data );
         this.dep_flight_data = data;
+        console.log(this.dep_flight_data );
+        // this.dep_flight_display_data = [];
         // this.dep_flight_termianl = this.dep_flight_data['terminal'];
         // this.country_droplist_dep = Object.keys(this.dep_flight_data)
         // console.log(typeof this.dep_flight_data);
@@ -40,7 +44,7 @@ export class ResultComponent implements OnInit {
         // console.log(Object.keys(this.dep_flight_data).length);
         // console.log(Math.ceil((Object.keys(this.dep_flight_data).length) / 10));
         this.amount_flight = Math.ceil((Object.keys(this.dep_flight_data).length) / 10);
-        for( var i = 0; i < 10 ; i++){
+        for( var i = 0; i < 4 ; i++){
           this.dep_flight_display_data.push(this.dep_flight_data[i])
         }
         // this.dep_index = this.dep_flight_data.;
@@ -74,7 +78,7 @@ export class ResultComponent implements OnInit {
     // console.log(this.dep_flight_display_data);
     this.dep_flight_display_data = [];
 
-    for( var i = 0; i < 10 ; i++){
+    for( var i = 0; i < 4 ; i++){
       this.dep_flight_display_data.push(this.dep_flight_data[pageNumber * 10 + i])
     }
     console.log(this.dep_flight_display_data);

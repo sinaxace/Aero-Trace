@@ -1,20 +1,20 @@
 <table class="listing">
     <thead>
         <tr>
-            <th>Departing Time</th>
-            <th>Status</th>
-            <th>Destination</th>
+            <th>Time</th>
+            <!-- <th>Status</th> -->
+            <th>Area</th>
             <th>Airline</th>
             <th>Flight #</th>
             <th>Terminal</th>
-            <th class=lastfield>Gate</th>
+            <th class=lastfield>Gate/Coursel</th>
         </tr>
     </thead>
 
     <tbody>
         <tr *ngFor = "let termianls of dep_flight_display_data">
             <td>{{termianls.schTime}}</td>
-            <td>{{termianls.status}}</td>
+            <!-- <td>{{termianls.status}}</td> -->
 
             <!-- If no trasportation only 1 destination so only show destinaion
             However, if 2 destinaion index 0 is transport and the index 1 is final destinaiton -->
@@ -55,58 +55,7 @@
 
         </tr>
     </tbody>
-<!-- 
-    <tbody>
-        <tr>
-            <td>WS2660</td>
-            <td>19:02</td>
-            <td>Air Canada</td>
-            <td>T2</td>
-            <td>G14</td>
-        </tr>
-        <tr>
-            <td>WS2660</td>
-            <td>19:02</td>
-            <td>Air Canada</td>
-            <td>T2</td>
-            <td>G14</td>
-        </tr>
-        <tr>
-            <td>WS2660</td>
-            <td>19:02</td>
-            <td>Air Canada</td>
-            <td>T2</td>
-            <td>G14</td>
-        </tr>
-        <tr>
-            <td>WS2660</td>
-            <td>19:02</td>
-            <td>Air Canada</td>
-            <td>T2</td>
-            <td>G14</td>
-        </tr>
-        <tr>
-            <td>WS2660</td>
-            <td>19:02</td>
-            <td>Air Canada</td>
-            <td>T2</td>
-            <td>G14</td>
-        </tr>
-        <tr>
-            <td>WS2660</td>
-            <td>19:02</td>
-            <td>Air Canada</td>
-            <td>T2</td>
-            <td>G14</td>
-        </tr>
-        <tr class=lastfield>
-            <td>WS2660</td>
-            <td>19:02</td>
-            <td>Air Canada</td>
-            <td>T2</td>
-            <td>G14</td>
-        </tr>
-    </tbody> -->
+
 </table>
 <section class=listing>
     <button mat-button id=previous>
