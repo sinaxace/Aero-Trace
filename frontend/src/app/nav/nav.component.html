@@ -26,8 +26,8 @@
             <button routerLink="/settings" class="settings" mat-icon-button>
                 <mat-icon id=settingIcon>settings</mat-icon>
             </button>
-            <button class="help" mat-icon-button>
-                <mat-icon id="helpIcon">help</mat-icon>
+            <button class="account" mat-icon-button (tap)="myAccount()">
+                <mat-icon id="accountIcon">account_circle</mat-icon>
             </button>
         </mat-menu>
     </mat-toolbar-row>
