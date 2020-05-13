@@ -65,6 +65,7 @@ def dep_flight_schedule(schedule_dep):
 
         dep_flight_info_list_jsondata ={'schTime':'',
                                         'latestTime':'',
+                                        'flight':[],
                                         'terminal':'',
                                         'status':'', 
                                         'gate':'',
@@ -86,10 +87,29 @@ def dep_flight_schedule(schedule_dep):
         dep_flight_info_list_jsondata['status'] = flight["status"]
         dep_flight_info_list_jsondata['gate']= flight["gate"]
 
+
+
+
+
+
+
         dep_flight_route = flight["routes"]
-        # dep_flight_info_list_jsondata['destination']= flight["routes"]
+        dep_flight_id_list = flight["ids"]
+
+        # dep_flight_information_id_list = flight["ids"]
+
+
+
+        #save the first flight first 
+        dep_flight_information_id = {'id':flight["id"],
+                                     'id2':flight["id2"],
+                                     'airline_name':flight["al"] }
+        dep_flight_info_list_jsondata['flight'].append(dep_flight_information_id)
+        # dep_flight_information_id['id'] = flight["id"]                                   
+        # dep_flight_information_id['id2'] = flight["id2"]                                   
+        # dep_flight_information_id['airline_name'] = flight["al"]                                   
+
         
-        j = 0
         for destination in dep_flight_route:
             dep_destination_route = {'code':'',
                                 'name':'',
@@ -106,7 +126,17 @@ def dep_flight_schedule(schedule_dep):
             dep_destination_route['region'] = destination['region']
 
             print(destination)
-            j += 1
+
+        for flight_info in dep_flight_id_list:
+
+            dep_flight_information_id = {'id':'',
+                                     'id2':'',
+                                     'airline_name':''}
+            dep_flight_info_list_jsondata['flight'].append(dep_flight_information_id)
+            dep_flight_information_id['id'] = flight_info['id']
+            dep_flight_information_id['id2'] = flight_info['id2']
+            dep_flight_information_id['airline_name'] = flight_info['alName']
+        
 
 
         # dep_flight_information_list['latestTm'] .append(dep_flight_info_list_jsondata['latestTm'][i])
