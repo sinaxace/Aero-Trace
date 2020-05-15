@@ -1,3 +1,6 @@
+# Before starting other instructions...
+Follow this tutorial on setting up DJango pipenv: https://www.techiediaries.com/pipenv-tutorial/
+
 # User Model and Authentication
 We are using django.contrib.auth `s User model which give as a default User with id, username, email. In addition to that we are creating authentication.py class to add custom authentication.
 We are checking user's email and password .

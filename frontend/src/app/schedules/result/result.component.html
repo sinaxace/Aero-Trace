@@ -11,9 +11,9 @@
             <th class=lastfield>Gate/Coursel</th>
         </tr>
     </thead>
-    
+
     <tbody>
-        <tr *ngFor = "let termianls of dep_flight_display_data">
+        <tr *ngFor="let termianls of dep_flight_display_data">
             <td>{{termianls.schTime}}</td>
             <!-- <td>{{termianls.status}}</td> -->
 
@@ -23,14 +23,14 @@
             <td *ngIf="termianls.destination?.length < 2">
                 {{termianls.destination[0].country}},&nbsp;
                 {{termianls.destination[0].city}}</td>
-           
-    <!-- If no trasportation only 1 destination so only show destinaion
+
+            <!-- If no trasportation only 1 destination so only show destinaion
             However, if 2 destinaion index 0 is transport and the index 1 is final destinaiton -->
-    <td *ngIf="termianls.destination?.length < 2">
+            <td *ngIf="termianls.destination?.length < 2">
                 {{termianls.destination[0].country}},&nbsp;
                 {{termianls.destination[0].city}}</td>
-    <!-- Length 1-->
-    
+            <!-- Length 1-->
+
             <td *ngIf="termianls.destination?.length > 1">
                 {{termianls.destination[1].city}},&nbsp;
                 {{termianls.destination[1].country}}<br>
@@ -66,13 +66,11 @@
 
 </table>
 <section class=listing>
-    <button mat-button id=previous>
+    <button (click)="shiftNumbers(false)" mat-button id=previous>
         <img src="../../assets/images/arrowTipLeft.png" alt="Previous">
     </button>
-    <button *ngFor = 'let page of counter(amount_flight) ;let i = index' 
-            class="page"
-            (click)="passIndex(i)">{{i+1}}</button>
-    <button mat-button id=next>
+    <button *ngFor='let page of counter(4) ;let i = index' class="page" (click)="passIndex(i)">{{i+1}}</button>
+    <button (click)="shiftNumbers(true)" mat-button id=next>
         <img src="../../assets/images/arrowTipRight.png" alt="Next">
     </button>
 </section>
