@@ -11,7 +11,7 @@ import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { EstimatorsComponent } from './estimators/estimators.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ResultComponent } from './schedules/result/result.component';
+import { ResultsComponent } from './results/results.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { WrittenreviewComponent } from './writtenreview/writtenreview.component';
 import { EstimatedComponent } from './estimated/estimated.component';
@@ -29,11 +29,11 @@ const routes: Routes = [
   {
     path: 'schedules', component: SchedulesComponent, children: [
       {
-        path: '', redirectTo: 'depart', pathMatch: 'full' // First loads to depart component
+        path: '', redirectTo: 'results', pathMatch: 'full' // First loads to depart component
       }
     ]
   },
-  { path: 'result', component: ResultComponent },
+  { path: 'results', component: ResultsComponent },
   { path: 'terminals', component: TerminalsComponent },
   { path: 'restaurants', component: RestaurantsComponent },
   { path: 'reviews', component: ReviewsComponent },
