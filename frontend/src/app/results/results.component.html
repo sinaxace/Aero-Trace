@@ -1,5 +1,18 @@
 <section id="result-layout">
-    <div class="data-row" *ngFor="let row of dep_flight_display_data">
+
+    <!-- Note on #dataRow meaning
+        A pound sign beside the name makes it a template-reference-variable,
+        meaning that it connects to the original element that's binded to it's event.
+
+        Look at the onSwipe() method's 1st argument & you will see that it's binded with
+        the #dataRow template-reference-variable. This lets us target the specific data-row
+        div element that's swiped. 
+
+        Reference: https://angular.io/guide/template-syntax#template-reference-variables-var
+    -->
+    <div [@rowSlide]="animationState" (@rowSlide.done)="resetAnimationState()" #dataRow
+        (swipeleft)="onSwipeLeft(dataRow)" (swiperight)="onSwipeRight(dataRow)" class="data-row"
+        *ngFor="let row of dep_flight_display_data">
         <span class="schedule-type">Arrives</span>
         <div class="preview">
             <span class="preview-location">
@@ -10,6 +23,10 @@
                 {{row.destination[0].city}} {{row.destination[0].country}}
             </span>
         </div>
+        <button (click)="showDetails()" mat-button class="details-btn">
+            <mat-icon id=info>info</mat-icon><br>
+            <span>Details</span>
+        </button>
         <button mat-icon-button>
             <mat-icon>arrow_forward_ios</mat-icon>
         </button>

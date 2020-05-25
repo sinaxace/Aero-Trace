@@ -35,6 +35,7 @@ import { ApiService } from './api.service';
 import { SearchComponent } from './schedules/result/search/search.component';
 import { AccountComponent } from './nav/account/account.component';
 import { ResultsComponent } from './results/results.component';
+import { DetailsComponent } from './results/details/details.component';
 // the second parameter 'fr-FR' is optional
 registerLocaleData(localeFr, 'fr-FR');
 
@@ -62,9 +63,10 @@ registerLocaleData(localeFr, 'fr-FR');
     DatausageComponent,
     SearchComponent,
     AccountComponent,
-    ResultsComponent
+    ResultsComponent,
+    DetailsComponent
   ],
-  entryComponents: [AccountComponent],
+  entryComponents: [AccountComponent, DetailsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

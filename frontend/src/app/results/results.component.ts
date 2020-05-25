@@ -1,13 +1,28 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../api.service';
 
+//for dialog pop-up of details component
+import { DetailsComponent } from "./details/details.component";
+import { MatDialog } from "@angular/material/dialog";
+
+// for swipe animations
+import { trigger, keyframes, animate, transition } from '@angular/animations';
+import * as slideKey from '../slide-keyframes';
+
 
 @Component({
   selector: 'app-results',
   templateUrl: './results.component.html',
-  styleUrls: ['./results.component.less']
+  styleUrls: ['./results.component.less'],
+  animations: [
+    trigger('rowSlide', [
+      transition('* => slideInDetails', animate(1000, keyframes(slideKey.slideInDetails)))
+    ])
+  ]
 })
 export class ResultsComponent {
+
+  animationState: string = '';
 
   dep_flight_data = {}
   dep_flight_display_data = []
@@ -22,10 +37,47 @@ export class ResultsComponent {
   amount_flight = 0;
 
 
-  constructor(private dep_flight_schedule: ApiService) {
+  constructor(public dialog: MatDialog, private dep_flight_schedule: ApiService) {
     this.getDepFlightSchedule();
     this.dep_flight_data = {}
     this.dep_index = [];
+  }
+
+  showDetails() {
+    this.dialog.open(DetailsComponent);
+  }
+
+  /**
+   * @method onSwipeLeft starts the slideLeft animation and shows the details button
+   * @param row contains the data row that was swiped.
+   */
+  onSwipeLeft(row: any) {
+    console.log(row.children[0]);
+    console.log("sliding");
+    if (!this.animationState) {
+      this.animationState = "slideInDetails";
+    }
+    row.children[0].style.display = "none";
+    row.children[2].style.display = "block";
+    row.children[3].style.display = "none";
+  }
+
+  /**
+   * @method onSwipeRight starts the slideRight animation and hide the details button
+   * @param row contains the data row that was swiped.
+   */
+  onSwipeRight(row: any) {
+    row.children[0].style.display = "block";
+    row.children[2].style.display = "none";
+    row.children[3].style.display = "block";
+  }
+
+  /**
+   * @method resetAnimationState resets the animation state to 
+   *              an empty string.
+   */
+  resetAnimationState() {
+    // this.animationState = '';
   }
 
   getDepFlightSchedule = () => {
