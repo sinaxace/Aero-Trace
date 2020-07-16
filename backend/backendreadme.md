@@ -1,3 +1,19 @@
+# Before starting other instructions...
+Follow this tutorial on setting up DJango pipenv: https://www.techiediaries.com/pipenv-tutorial/
+
+Use the following commands to start pipenv virtual environment if usign pipenv tool.
+``` python
+# enter pipenv
+pipenv shell --three # to start virual env
+
+# some needed installations before running project in pipenv
+pipenv install django djangorestframework djangorestframework-jwt django-cors-headers requests
+
+# grab airport data and run django server
+python manage.py migrate # sets up data from django backend database
+python manage.py runserver 0.0.0.0:8000 # finally runs the django backend to work with the service API
+```
+
 # User Model and Authentication
 We are using django.contrib.auth `s User model which give as a default User with id, username, email. In addition to that we are creating authentication.py class to add custom authentication.
 We are checking user's email and password .

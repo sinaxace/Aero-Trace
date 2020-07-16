@@ -19,3 +19,9 @@ export const slideInLeft = [
     style({ transform: 'translate3d(150%, 0, 0)', visibility: "visible", offset: 0 }),
     style({ transform: 'translate3d(0, 0, 0)', offset: 1 }) // the offset 1 is 100% within css keyframes
 ];
+
+// Below is more specific to the the result data rows in results.component
+export const slideInDetails = [
+    style({ transform: 'translate3d(0, 0, 0)', offset: 0 }),
+    style({ transform: 'translate3d(-30%, 0, 0)', offset: 1 }) // the offset 1 is 100% within css keyframes
+];

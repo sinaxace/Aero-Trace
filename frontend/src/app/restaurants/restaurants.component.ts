@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { trigger, keyframes, animate, transition } from '@angular/animations'; // browser animation imports
-import * as slideKey from './slide-keyframes'; // the animate.css library import
+import * as slideKey from '../slide-keyframes'; // the animate.css library import
 
 @Component({
   selector: 'app-restaurants',
@@ -34,8 +34,7 @@ export class RestaurantsComponent {
 
   /**
    * @method startAnimation simply starts a new animation if the animation state is an empty string.
-   * @param state contains the new animation state as a string.
-   */
+ */
   startAnimation() {
     console.log("sliding");
     if (!this.animationState) {

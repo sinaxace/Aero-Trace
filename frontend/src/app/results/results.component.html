@@ -1,0 +1,45 @@
+<section id="result-layout">
+
+    <!-- Note on #dataRow meaning
+        A pound sign beside the name makes it a template-reference-variable,
+        meaning that it connects to the original element that's binded to it's event.
+
+        Look at the onSwipe() method's 1st argument & you will see that it's binded with
+        the #dataRow template-reference-variable. This lets us target the specific data-row
+        div element that's swiped. 
+
+        Reference: https://angular.io/guide/template-syntax#template-reference-variables-var
+    -->
+    <div [@rowSlide]="animationState" (@rowSlide.done)="resetAnimationState()" #dataRow
+        (swipeleft)="onSwipeLeft(dataRow)" (swiperight)="onSwipeRight(dataRow)" class="data-row"
+        *ngFor="let row of dep_flight_display_data">
+        <span class="schedule-type">Arrives</span>
+        <div class="preview">
+            <span class="preview-location">
+                {{row.schTime | date : 'H:mm'}}
+            </span>
+            <!-- TODO: Ask Nancy about row.destination? if condition-->
+            <span class="preview-location" *ngIf="row.destination?.length > 0">
+                {{row.destination[0].city}} {{row.destination[0].country}}
+            </span>
+        </div>
+        <button (click)="showDetails()" mat-button class="details-btn">
+            <mat-icon id=info>info</mat-icon><br>
+            <span>Details</span>
+        </button>
+        <button mat-icon-button>
+            <mat-icon>arrow_forward_ios</mat-icon>
+        </button>
+    </div>
+</section>
+<section class=listing>
+    <button (click)="shiftNumbers(false)" mat-button id=previous>
+        <img src="../../assets/images/arrowTipLeft.png" alt="Previous">
+    </button>
+    <button *ngFor='let page of counter(3) ;let i = index' class="page" (click)="passIndex(i)">{{i+1}}</button>
+    <span style="font-size: 30px;">...</span>
+    <button class="page" (click)="passIndex(i)">{{amount_flight / 6 | number : '1.0-0'}}</button>
+    <button (click)="shiftNumbers(true)" mat-button id=next>
+        <img src="../../assets/images/arrowTipRight.png" alt="Next">
+    </button>
+</section>

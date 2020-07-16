@@ -14,8 +14,6 @@ import { EstimatorsComponent } from './estimators/estimators.component';
 import { TerminalsComponent } from './terminals/terminals.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { DepartComponent } from './schedules/depart/depart.component';
-import { ArriveComponent } from './schedules/arrive/arrive.component';
 import { ResultComponent } from './schedules/result/result.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { WrittenreviewComponent } from './writtenreview/writtenreview.component';
@@ -36,6 +34,8 @@ import localeFr from '@angular/common/locales/fr';
 import { ApiService } from './api.service';
 import { SearchComponent } from './schedules/result/search/search.component';
 import { AccountComponent } from './nav/account/account.component';
+import { ResultsComponent } from './results/results.component';
+import { DetailsComponent } from './results/details/details.component';
 // the second parameter 'fr-FR' is optional
 registerLocaleData(localeFr, 'fr-FR');
 
@@ -49,8 +49,6 @@ registerLocaleData(localeFr, 'fr-FR');
     TerminalsComponent,
     HomeComponent,
     PageNotFoundComponent,
-    DepartComponent,
-    ArriveComponent,
     ResultComponent,
     ReviewsComponent,
     WrittenreviewComponent,
@@ -64,9 +62,11 @@ registerLocaleData(localeFr, 'fr-FR');
     AccessibilityComponent,
     DatausageComponent,
     SearchComponent,
-    AccountComponent
+    AccountComponent,
+    ResultsComponent,
+    DetailsComponent
   ],
-  entryComponents: [AccountComponent],
+  entryComponents: [AccountComponent, DetailsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
