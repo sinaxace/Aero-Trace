@@ -6,19 +6,20 @@ import os
 import sys
 
 
-#Get fligh API
+# Get fligh API
 # yesterdayArr = requests.get("https://gtaa-fl-prod.azureedge.net/api/flights/list?type=ARR&day=yesterday&useScheduleTimeOnly=false")
-todayArr = requests.get("https://gtaa-fl-prod.azureedge.net/api/flights/list?type=ARR&day=today&useScheduleTimeOnly=false")
+todayArr = requests.get(
+    "https://gtaa-fl-prod.azureedge.net/api/flights/list?type=ARR&day=today&useScheduleTimeOnly=false")
 #tomorrowArr = requests.get("https://gtaa-fl-prod.azureedge.net/api/flights/list?type=ARR&day=tomorrow&useScheduleTimeOnly=false")
 
-#Get file path
+# Get file path
 #fileDir = os.path.dirname(os.path.abspath(_file_))
-#print(fileDir)
+# print(fileDir)
 
 parsed = json.loads(todayArr.text)
 schedule = parsed['list']
-
-#Get flight id
+print(schedule)
+# Get flight id
 id_list = []
 country_list = []
 city_list = []
@@ -45,8 +46,9 @@ for country in schedule:
 print('-----dic--------')
 print(dic)
 
+
 def adding_city(schedule, dic):
-    
+
     for s in schedule:
         if s["routes"][0]["cnty"] in dic:
             if s["routes"][0]["city"] not in dic[s["routes"][0]["cnty"]]:
@@ -54,9 +56,9 @@ def adding_city(schedule, dic):
     return dic
 
 
-country_city_list = adding_city(schedule,dic)
+country_city_list = adding_city(schedule, dic)
 print('-----adding_city(schedule,dic)--------')
-print(adding_city(schedule,dic))
+print(adding_city(schedule, dic))
 
 
 # text = json.dumps(schedule, sort_keys=False, indent=4)
@@ -65,4 +67,4 @@ print(adding_city(schedule,dic))
 # f.close()
 
 # print(r.text)
-#print(todayArr.text)
+# print(todayArr.text)

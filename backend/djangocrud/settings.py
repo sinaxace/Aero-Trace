@@ -24,18 +24,17 @@ SECRET_KEY = '+ivha7oi+zqr8+w@3v#n8k^p^g1n&(45k6o(=+$j@rf7585bxd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-#CORS_ORIGIN_ALLOW_ALL=True
-ALLOWED_HOSTS = []
+# CORS_ORIGIN_ALLOW_ALL=True
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'mysite.com']
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:4200'
 ]
 
 # Application definition
 
-#rest_framework.authtoken -> Django rest built-in token authentication
+# rest_framework.authtoken -> Django rest built-in token authentication
 INSTALLED_APPS = [
     'djangocrud.api',
-    'corsheaders',
     'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -44,6 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework.authtoken',
+    'social_django',
+
 ]
 
 MIDDLEWARE = [
@@ -120,8 +121,9 @@ REST_FRAMEWORK = {
     ]
 }
 
-#JWT Token Settings
-## We are giving 1 hour of token expiration time.
+
+# JWT Token Settings
+# We are giving 1 hour of token expiration time.
 JWT_AUTH = {
     'JWT_ALLOW_REFRESH': True,
     'JWT_EXPIRATION_DELTA': datetime.timedelta(seconds=3600),
@@ -129,8 +131,12 @@ JWT_AUTH = {
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
-   # 'django.authentication.EmailAuthBackend',
+    'djangocrud.api.authentication.EmailAuthBackend',
+    'social_core.backends.facebook.FacebookOAuth2'
 ]
+
+SOCIAL_AUTH_FACEBOOK_KEY = '692134291587728'  # Facebook App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = 'f3b0f9edfb5c8eded3a21b0e50bc0b76'
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 

@@ -532,3 +532,46 @@ First thing is index, if you go to '/api' you will see two end - points.
 * Fix {% load static %}
 
 
+# Google, Facebook and Twitter Authentication
+
+AUTHENTICATION_BACKENDS  section under settings.py has list of authentication for your project.
+For example we have
+```python
+ AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+   # 'django.authentication.EmailAuthBackend',
+]
+```
+this gives authentication with the Model base.
+Now create a class called 'authentication.py' under api directory.
+
+``` python
+class EmailAuthBackend(object):
+    def authenticate(self, request, username=None, password=None):
+        try:
+            user = User.objects.get(email=username)
+            if user.check_password(password):
+                return user
+            return None
+        except User.DoesNotExist:
+            return None
+    def get_user(self, user_id):
+        try:
+            return User.objects.get(pk=user_id)
+        except User.DoesNotExist:
+            return Non
+```
+we have two methods
+  * authenticate -> Get request, username and password to give back user credentials
+  * get_user -> Gets the user id and return the user
+
+Go to console and write this line to install module -> **pip install social-auth-app-django===2.1.0**
+Go to settings.py and add the code to INSTALLED_APPS -> social_django
+Now migrate your changes. -> python manage.py migrate
+
+
+There mught be some host issue later, we will see...
+
+
+
+For angular part - > npm install angularx-social-login --save
