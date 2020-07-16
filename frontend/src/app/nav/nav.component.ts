@@ -15,7 +15,7 @@ export class NavComponent {
   }
 
   myAccount(): void {
-    // this.dialog.open(AccountComponent);
+    this.dialog.open(AccountComponent);
   }
 
 }
