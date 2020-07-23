@@ -52,7 +52,7 @@ export class ResultsComponent {
    * @param row contains the data row that was swiped.
    */
   onSwipeLeft(row: any) {
-    console.log(row.children[0]);
+    console.log(row);
     console.log("sliding");
     if (!this.animationState) {
       this.animationState = "slideInDetails";

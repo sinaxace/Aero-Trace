@@ -24,7 +24,7 @@
     <!-- The start time range -->
     <div class=from>
         <label for=from>From</label> <br>
-        <input name=from [owlDateTimeTrigger]="dt6" [owlDateTime]="dt6">
+        <input #time name=from [owlDateTimeTrigger]="dt6" [owlDateTime]="dt6">
         <owl-date-time [pickerType]="'timer'" [hour12Timer]="false" [pickerMode]="'dialog'" #dt6>
         </owl-date-time>
     </div>
@@ -96,6 +96,6 @@
     </select>
 
     <!-- Submit button for searching-->
-    <input routerLink="/results" routerLinkActive="active" type=submit value=Search>
+    <input (click)="getTime(time)" routerLink="/results" routerLinkActive="active" type=submit value=Search>
 
 </form>

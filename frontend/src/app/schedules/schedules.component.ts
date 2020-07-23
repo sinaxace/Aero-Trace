@@ -39,6 +39,10 @@ export class SchedulesComponent implements OnInit {
     return this.select_country;
   }
 
+  getTime(time: any) {
+    console.log(time);
+  }
+
   getdropdown = () => {
     this.country_dep_api.getCountryCityDep().subscribe(
       data => {
