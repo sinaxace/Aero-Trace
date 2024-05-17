@@ -12,3 +12,4 @@ class ReadOnly(permissions.BasePermission):
         return (
             request.method in SAFE_METHODS
         )
+
